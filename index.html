@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarpMarks - Your Carp Fishing Companion</title>
+  <meta name="description" content="Track your fishing spots, log catches, and get real-time conditions for the perfect fishing trip.">
+  <style>
+    :root {
+      --primary: #0A4D68;
+      --primary-dark: #05293D;
+      --accent: #D4A574;
+      --text: #0D1117;
+      --text-secondary: #4B5563;
+      --background: #F9FAFB;
+      --white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: var(--white);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .header .tagline {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 500px;
+      margin: 0 auto 30px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .feature {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .feature p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 40px;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .cta h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .store-badges {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .store-badge {
+      background: var(--text);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+
+    .store-badge:hover {
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-links {
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 15px;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .footer-contact {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      .header .tagline {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>CarpMarks</h1>
+    <p class="tagline">Your personal carp fishing companion. Track spots, log catches, and fish smarter.</p>
+    <span class="badge">Coming Soon</span>
+  </header>
+
+  <main class="container">
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">📍</div>
+        <h3>Save Fishing Spots</h3>
+        <p>Mark your favorite locations on an interactive map with photos and notes.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🐟</div>
+        <h3>Log Your Catches</h3>
+        <p>Record species, weight, bait used, and photos for every catch.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌤️</div>
+        <h3>Real-Time Conditions</h3>
+        <p>Get weather, pressure trends, wind direction, and moon phase data.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔔</div>
+        <h3>Smart Notifications</h3>
+        <p>Receive alerts when conditions are perfect at your saved spots.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎣</div>
+        <h3>Bait Recommendations</h3>
+        <p>Science-based bait suggestions based on water temperature and conditions.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>Track Your Stats</h3>
+        <p>View your personal best, total catches, and fishing history.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h2>Ready to Fish Smarter?</h2>
+      <p>CarpMarks is coming soon to iOS and Android.</p>
+      <div class="store-badges">
+        <a href="#" class="store-badge">App Store</a>
+        <a href="#" class="store-badge">Google Play</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:support@carpmarks.app">Contact</a>
+    </div>
+    <p class="footer-contact">&copy; 2026 CarpMarks. All rights reserved.</p>
+  </footer>
+</body>
+</html>
