@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account & Data Deletion - CarpMarks</title>
+  <style>
+    :root {
+      --primary: #0A4D68;
+      --primary-dark: #05293D;
+      --accent: #D4A574;
+      --text: #0D1117;
+      --text-secondary: #4B5563;
+      --background: #F9FAFB;
+      --white: #FFFFFF;
+      --grey-light: #F3F4F6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: var(--white);
+      padding: 40px 20px;
+    }
+
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .header a {
+      color: var(--white);
+      text-decoration: none;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    .header a:hover {
+      opacity: 1;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      margin: 10px 0 5px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .intro-card {
+      background: rgba(10, 77, 104, 0.1);
+      border-left: 4px solid var(--primary);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .intro-card p {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin: 35px 0 15px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .steps-card {
+      background: var(--white);
+      border: 1px solid var(--grey-light);
+      padding: 25px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step-number {
+      background: var(--primary);
+      color: var(--white);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    .step-text {
+      color: var(--text);
+    }
+
+    .arrow {
+      color: var(--primary);
+      font-weight: 600;
+      margin: 0 5px;
+    }
+
+    .warning-box {
+      background: #FEF3C7;
+      border-left: 4px solid #F59E0B;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--grey-light);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .contact-card a {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      margin: 10px 0 20px 20px;
+      color: var(--text-secondary);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html">&larr; Back to CarpMarks</a>
+      <h1>Account & Data Deletion</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="intro-card">
+      <p>You can delete your CarpMarks account and all associated data at any time.</p>
+    </div>
+
+    <h2>Delete Account in the App</h2>
+    <p>You can delete your CarpMarks account directly in the app by following these steps:</p>
+
+    <div class="steps-card">
+      <div class="step">
+        <span class="step-number">1</span>
+        <span class="step-text">Open the CarpMarks app</span>
+      </div>
+      <div class="step">
+        <span class="step-number">2</span>
+        <span class="step-text">Go to <strong>Profile</strong></span>
+      </div>
+      <div class="step">
+        <span class="step-number">3</span>
+        <span class="step-text">Tap <strong>Delete Account</strong></span>
+      </div>
+      <div class="step">
+        <span class="step-number">4</span>
+        <span class="step-text">Confirm the deletion</span>
+      </div>
+    </div>
+
+    <h2>Cannot Access the App?</h2>
+    <p>If you cannot access the app, please email us at:</p>
+
+    <div class="contact-card">
+      <a href="mailto:support@carpmarks.com">support@carpmarks.com</a>
+    </div>
+
+    <p>Please include the <strong>email address used to register</strong> your CarpMarks account. We will process your deletion request within 30 days.</p>
+
+    <h2>What Gets Deleted</h2>
+    <p>When you delete your account, the following data will be permanently removed:</p>
+    <ul>
+      <li>Your account information (email, display name, profile photo)</li>
+      <li>All saved fishing spots and their photos</li>
+      <li>All catch records and their photos</li>
+      <li>Your app preferences and notification settings</li>
+    </ul>
+
+    <div class="warning-box">
+      <strong>Warning:</strong> Account deletion is permanent and cannot be undone. Please make sure you want to proceed before deleting your account.
+    </div>
+
+    <a href="index.html" class="back-link">&larr; Back to CarpMarks</a>
+  </main>
+</body>
+
+</html>
