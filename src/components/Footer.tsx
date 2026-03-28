@@ -6,9 +6,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div>
-            <div className="flex items-center gap-2 font-bold text-xl mb-3">
-              <span>🎣</span>
-              <span>CarpMarks</span>
+            <div className="mb-3">
+              <img src="/logo-white.png" alt="CarpMarks" className="h-9 w-auto" />
             </div>
             <p className="text-white/60 text-sm leading-relaxed">
               Your personal carp fishing companion. Track spots, log catches, and fish smarter.
