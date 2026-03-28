@@ -288,7 +288,8 @@
 }
 
 .blog-content code {
-  @apply bg-[#0A4D68]/8 text-[#0A4D68] px-1.5 py-0.5 rounded text-sm font-mono;
+  @apply text-[#0A4D68] px-1.5 py-0.5 rounded text-sm font-mono;
+  background-color: rgba(10, 77, 104, 0.08);
 }
 
 /* ─── Reading Progress Bar ──────────────────────────────────────────────── */
