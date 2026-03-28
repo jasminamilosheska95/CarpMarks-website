@@ -10,7 +10,7 @@ export default function Header() {
     <header className="bg-[#05293D] text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <img src="/logo-white.png" alt="CarpMarks" className="h-9 w-auto" />
+          <img src="/logo-white.png" alt="CarpMarks" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}

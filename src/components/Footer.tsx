@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div>
             <div className="mb-3">
-              <img src="/logo-white.png" alt="CarpMarks" className="h-9 w-auto" />
+              <img src="/logo-white.png" alt="CarpMarks" className="h-12 w-auto" />
             </div>
             <p className="text-white/60 text-sm leading-relaxed">
               Your personal carp fishing companion. Track spots, log catches, and fish smarter.
