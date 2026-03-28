@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 
+export const dynamic = 'force-static';
+
 const BASE_URL = 'https://www.carpmarks.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
