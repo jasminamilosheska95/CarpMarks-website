@@ -5,7 +5,7 @@ import { featuredProducts } from '@/data/products';
 const features = [
   {
     title: 'Save Fishing Spots',
-    description: 'Pin any location on an interactive map with photos, depth notes, and bottom type data.',
+    description: 'Pin any location on an interactive map with photos, notes, and bottom type data.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -16,7 +16,7 @@ const features = [
   },
   {
     title: 'Log Your Catches',
-    description: 'Record species, weight, bait, rig, conditions, and photos for every fish you land.',
+    description: 'Record every catch with species, weight, bait, and photos. Build your personal fishing history.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
@@ -38,7 +38,7 @@ const features = [
   },
   {
     title: 'Smart Notifications',
-    description: 'Get alerted when conditions are perfect at your saved spots — never miss a window.',
+    description: 'Get alerted when conditions are perfect at your saved spots or when there are nearby catches — never miss a window.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
@@ -50,8 +50,8 @@ const features = [
     color: 'from-[#D4A574] to-[#c49464]',
   },
   {
-    title: 'Bait Recommendations',
-    description: 'Science-based bait suggestions matched to water temperature and seasonal conditions.',
+    title: 'Bait & Conditions Log',
+    description: 'Log the bait that worked alongside the conditions — temperature, wind, pressure, and moon phase.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3"/>
@@ -62,7 +62,7 @@ const features = [
   },
   {
     title: 'Track Your Stats',
-    description: 'Personal bests, catch history, and session analytics that show what is actually working.',
+    description: 'Personal bests, catch history, and live conditions at your saved spots — all in one place.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18 20V10M12 20V4M6 20v-6"/>
@@ -74,9 +74,9 @@ const features = [
 ];
 
 const stats = [
-  { value: '50,000+', label: 'Catches Logged', icon: '🎣' },
-  { value: '30,000+', label: 'Spots Saved', icon: '📍' },
-  { value: '4.8★', label: 'App Rating', icon: '⭐' },
+  { value: '5,000+', label: 'Catches Logged', icon: '🎣' },
+  { value: '3,000+', label: 'Spots Saved', icon: '📍' },
+  { value: '5★', label: 'App Rating', icon: '⭐' },
   { value: 'Free', label: 'on Android', icon: '📱' },
 ];
 
@@ -252,9 +252,6 @@ export default function HomePage() {
             >
               Browse Full Gear Guide →
             </Link>
-            <p className="text-xs text-gray-400 mt-3">
-              As an Amazon Associate, we earn from qualifying purchases.
-            </p>
           </div>
         </div>
       </section>

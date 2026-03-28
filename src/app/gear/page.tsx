@@ -138,7 +138,7 @@ export default function GearPage() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-white mb-3">Track What Works With CarpMarks</h2>
           <p className="text-white/65 mb-6">
-            Log which gear you used when you catch — over time, the data shows you exactly what's producing results on each water.
+            Log every catch with bait, weight, and photos. Save your best spots and check conditions on the map — all in one free app.
           </p>
           <a
             href="https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks"

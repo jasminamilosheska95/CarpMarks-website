@@ -38,7 +38,7 @@ export default function Header() {
           <img
             src="/logo-white.png"
             alt="CarpMarks"
-            className="h-11 w-auto transition-opacity duration-200 group-hover:opacity-90"
+            className="h-14 w-auto transition-opacity duration-200 group-hover:opacity-90"
           />
         </Link>
 
