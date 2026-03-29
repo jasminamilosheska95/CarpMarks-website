@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -35,12 +34,9 @@ export default function VerifiedPage() {
           and catches with CarpMarks.
         </p>
 
-        <Link
-          href="/"
-          className="inline-block bg-[#0A4D68] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#05293D] transition-colors shadow-lg"
-        >
-          Open the App
-        </Link>
+        <p className="text-gray-600 text-base">
+          You can now open the <strong>CarpMarks app</strong> on your device and log in.
+        </p>
 
         <p className="mt-8 text-sm text-gray-400">
           Need help?{' '}
