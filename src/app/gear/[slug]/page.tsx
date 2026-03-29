@@ -99,7 +99,7 @@ export default async function ProductPage(
         <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
 
           {/* Short description */}
-          <p className="text-gray-700 text-base leading-relaxed mb-6 font-medium">
+          <p className="text-gray-700 text-base leading-relaxed mb-6 font-medium text-justify">
             {product.description}
           </p>
 
@@ -107,7 +107,7 @@ export default async function ProductPage(
           {product.longDescription && (
             <>
               <div className="border-t border-gray-100 pt-6 mb-8">
-                <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line text-justify">
                   {product.longDescription}
                 </p>
               </div>
