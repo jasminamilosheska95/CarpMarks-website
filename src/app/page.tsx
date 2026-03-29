@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
-import { featuredProducts } from '@/data/products';
 
 const features = [
   {
@@ -79,15 +78,6 @@ const stats = [
   { value: '5★', label: 'App Rating', icon: '⭐' },
   { value: 'Free', label: 'on Android', icon: '📱' },
 ];
-
-const categoryColors: Record<string, string> = {
-  Bait: 'bg-green-100 text-green-800',
-  Baiting: 'bg-blue-100 text-blue-800',
-  'Terminal Tackle': 'bg-purple-100 text-purple-800',
-  Location: 'bg-amber-100 text-amber-800',
-  Landing: 'bg-teal-100 text-teal-800',
-  Accessories: 'bg-rose-100 text-rose-800',
-};
 
 export default function HomePage() {
   const latestPosts = getAllPosts().slice(0, 3);
@@ -189,69 +179,6 @@ export default function HomePage() {
                 <p className="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Featured Gear ──────────────────────────────────────────────── */}
-      <section className="bg-white px-4" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-[#D4A574] text-xs font-bold uppercase tracking-widest">Essential Kit</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0A4D68] mt-3 mb-4 leading-tight">
-              Top Picks for Carp Anglers
-            </h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-lg">
-              Gear that consistently produces results — curated for carp fishing.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
-            {featuredProducts.map((product, i) => (
-              <div
-                key={product.title}
-                className="border border-gray-200 rounded-2xl p-5 hover:border-[#D4A574]/60 hover:shadow-lg transition-all duration-300 bg-white group animate-fade-in-up"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                {/* Top bar */}
-                <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${categoryColors[product.category] ?? 'bg-gray-100 text-gray-600'}`}>
-                    {product.category}
-                  </span>
-                  {product.badge && (
-                    <span className="text-[10px] font-bold text-[#D4A574] uppercase tracking-wide border border-[#D4A574]/30 px-2 py-0.5 rounded-full">
-                      {product.badge}
-                    </span>
-                  )}
-                </div>
-
-                <h3 className="font-bold text-gray-900 text-sm leading-snug mb-2 group-hover:text-[#0A4D68] transition-colors">
-                  {product.title}
-                </h3>
-                <p className="text-gray-500 text-xs leading-relaxed mb-4">{product.description}</p>
-
-                <a
-                  href={product.href}
-                  target="_blank"
-                  rel="noopener noreferrer sponsored"
-                  className="btn-shimmer inline-flex items-center gap-1.5 bg-[#FF9900] text-white text-xs font-bold px-3.5 py-2 rounded-lg hover:bg-[#e08800] transition-colors shadow-sm"
-                >
-                  View on Amazon
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link
-              href="/gear"
-              className="btn-shimmer inline-flex items-center gap-2 bg-[#0A4D68] text-white px-8 py-3.5 rounded-xl font-semibold hover:bg-[#083d54] transition-all shadow-lg hover:shadow-[#0A4D68]/30 hover:-translate-y-0.5 text-sm"
-            >
-              Browse Full Gear Guide →
-            </Link>
           </div>
         </div>
       </section>
