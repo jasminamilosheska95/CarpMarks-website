@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
+import { getAllProducts } from '@/data/products';
 
 export const dynamic = 'force-static';
 
@@ -7,6 +8,7 @@ const BASE_URL = 'https://www.carpmarks.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
+  const products = getAllProducts();
 
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -54,5 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...blogPages];
+  const gearPages: MetadataRoute.Sitemap = products.map((product) => ({
+    url: `${BASE_URL}/gear/${product.slug}/`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...blogPages, ...gearPages];
 }

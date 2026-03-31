@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllProducts, getProductBySlug } from '@/data/products';
+import StructuredData from '@/components/StructuredData';
 import type { Metadata } from 'next';
+
+const BASE_URL = 'https://www.carpmarks.com';
 
 export function generateStaticParams() {
   return getAllProducts().map((product) => ({ slug: product.slug }));
@@ -22,7 +25,7 @@ export async function generateMetadata(
     openGraph: {
       title: product.title,
       description,
-      url: `https://www.carpmarks.com/gear/${product.slug}/`,
+      url: `${BASE_URL}/gear/${product.slug}/`,
       siteName: 'CarpMarks',
       type: 'website',
     },
@@ -31,7 +34,7 @@ export async function generateMetadata(
       title: product.title,
       description,
     },
-    alternates: { canonical: `https://www.carpmarks.com/gear/${product.slug}/` },
+    alternates: { canonical: `${BASE_URL}/gear/${product.slug}/` },
   };
 }
 
@@ -64,8 +67,37 @@ export default async function ProductPage(
   const product = getProductBySlug(slug);
   if (!product) notFound();
 
+  const productUrl = `${BASE_URL}/gear/${product.slug}/`;
+
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.title,
+    description: product.longDescription ?? product.description,
+    url: productUrl,
+    brand: { '@type': 'Organization', name: 'CarpMarks' },
+    offers: {
+      '@type': 'Offer',
+      url: product.href,
+      availability: 'https://schema.org/InStock',
+      seller: { '@type': 'Organization', name: 'Amazon' },
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Gear Guide', item: `${BASE_URL}/gear/` },
+      { '@type': 'ListItem', position: 3, name: product.title, item: productUrl },
+    ],
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen">
+      <StructuredData data={productSchema} />
+      <StructuredData data={breadcrumbSchema} />
       {/* Header */}
       <div className="bg-gradient-to-br from-[#05293D] to-[#0A4D68] text-white py-16 px-4">
         <div className="max-w-3xl mx-auto">
