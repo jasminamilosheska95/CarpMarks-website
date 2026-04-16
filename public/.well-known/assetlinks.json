@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jasminamilosheska.carpmarks",
+      "sha256_cert_fingerprints": [
+        "30:AB:B5:07:71:30:37:00:D1:1F:27:E5:BF:8B:EB:06:73:1C:A6:AB:E5:27:05:E1:6A:8B:CB:11:7D:00:4D:A0"
+      ]
+    }
+  }
+]
