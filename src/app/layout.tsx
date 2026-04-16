@@ -52,6 +52,10 @@ export const metadata: Metadata = {
       'Expert carp fishing tips, rig guides, gear reviews and the CarpMarks app for Android.',
     images: ['/og-default.png'],
   },
+  icons: {
+    icon: '/icon-no-text.png',
+    apple: '/icon-no-text.png',
+  },
   robots: {
     index: true,
     follow: true,
