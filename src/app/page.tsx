@@ -49,12 +49,14 @@ const features = [
     color: 'from-[#D4A574] to-[#c49464]',
   },
   {
-    title: 'Bait & Conditions Log',
-    description: 'Log the bait that worked alongside the conditions — temperature, wind, pressure, and moon phase.',
+    title: 'CarpMarks AI',
+    description: 'Get AI-powered insights on the best spots, conditions, and tactics based on your personal catch data.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+        <path d="M12 2a4 4 0 0 1 4 4v1h1a3 3 0 0 1 0 6h-1v1a4 4 0 0 1-8 0v-1H7a3 3 0 0 1 0-6h1V6a4 4 0 0 1 4-4z"/>
+        <circle cx="9" cy="9" r="1" fill="currentColor"/>
+        <circle cx="15" cy="9" r="1" fill="currentColor"/>
+        <path d="M9 15s1 1.5 3 1.5 3-1.5 3-1.5"/>
       </svg>
     ),
     color: 'from-[#0A4D68] to-[#083d54]',
