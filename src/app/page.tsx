@@ -52,11 +52,8 @@ const features = [
     title: 'CarpMarks AI',
     description: 'Get AI-powered insights on the best spots, conditions, and tactics based on your personal catch data.',
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a4 4 0 0 1 4 4v1h1a3 3 0 0 1 0 6h-1v1a4 4 0 0 1-8 0v-1H7a3 3 0 0 1 0-6h1V6a4 4 0 0 1 4-4z"/>
-        <circle cx="9" cy="9" r="1" fill="currentColor"/>
-        <circle cx="15" cy="9" r="1" fill="currentColor"/>
-        <path d="M9 15s1 1.5 3 1.5 3-1.5 3-1.5"/>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7H3a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2M7.5 13a1.5 1.5 0 0 0-1.5 1.5A1.5 1.5 0 0 0 7.5 16 1.5 1.5 0 0 0 9 14.5 1.5 1.5 0 0 0 7.5 13m9 0a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5 1.5 1.5 0 0 0 1.5-1.5A1.5 1.5 0 0 0 16.5 13M3 17h18v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2z"/>
       </svg>
     ),
     color: 'from-[#0A4D68] to-[#083d54]',
