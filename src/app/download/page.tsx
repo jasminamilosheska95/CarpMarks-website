@@ -8,7 +8,7 @@ const PLAY_STORE_URL =
 export const metadata: Metadata = {
   title: 'Download CarpMarks – Free Carp Fishing App for Android',
   description:
-    'Download CarpMarks free on Android. The best carp fishing tracker app to save spots, log catches, monitor weather conditions, and improve every session.',
+    'Download CarpMarks free to start on Android. The carp fishing tracker app to save spots, log catches, monitor weather conditions, and improve every session.',
   alternates: { canonical: `${BASE_URL}/download` },
   keywords: [
     'best carp fishing app android',
@@ -33,7 +33,7 @@ const features = [
   {
     title: 'Save Fishing Spots',
     description:
-      'Pin any location on an interactive map with photos, notes, and bottom type. Never forget a productive swim again.',
+      'Pin any location on an interactive map with photos and notes. Never forget a productive swim again.',
   },
   {
     title: 'Log Every Catch',
@@ -139,7 +139,7 @@ export default function DownloadPage() {
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <span className="inline-flex items-center gap-2 border border-[#D4A574]/40 text-[#D4A574] px-4 py-1.5 rounded-full text-xs font-semibold mb-8 tracking-widest uppercase" style={{ background: 'rgba(212,165,116,0.12)' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-[#D4A574] animate-pulse" />
-            Free on Android
+            Free to Start on Android
           </span>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
@@ -229,7 +229,7 @@ export default function DownloadPage() {
       <section className="bg-gradient-to-br from-[#05293D] to-[#0A4D68] py-20 px-4 text-center text-white">
         <h2 className="text-3xl font-bold mb-4">Start Fishing Smarter Today</h2>
         <p className="text-white/65 mb-8 max-w-md mx-auto">
-          Download CarpMarks free on Android and start building the spot database and catch history that will improve every future session.
+          Download CarpMarks free to start on Android and start building the spot database and catch history that will improve every future session.
         </p>
         <a
           href={PLAY_STORE_URL}

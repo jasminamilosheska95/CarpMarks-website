@@ -4,7 +4,7 @@ import { getAllPosts } from '@/lib/blog';
 const features = [
   {
     title: 'Save Fishing Spots',
-    description: 'Pin any location on an interactive map with photos, notes, and bottom type data.',
+    description: 'Pin any location on an interactive map with photos and notes.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -99,7 +99,7 @@ export default function HomePage() {
           <div className="animate-fade-in-up">
             <span className="inline-flex items-center gap-2 border border-[#D4A574]/40 text-[#D4A574] px-4 py-1.5 rounded-full text-xs font-semibold mb-8 tracking-widest uppercase" style={{ background: 'rgba(212,165,116,0.12)' }}>
               <span className="w-1.5 h-1.5 rounded-full bg-[#D4A574] animate-pulse" />
-              Free on Android
+              Free to Start on Android
             </span>
           </div>
 
@@ -271,7 +271,7 @@ export default function HomePage() {
             Ready to Fish Smarter?
           </h2>
           <p className="text-white/60 mb-8 text-lg leading-relaxed">
-            Download CarpMarks free on Android. Build your spot database, track your catches, and start seeing patterns that put more fish on the bank.
+            Download CarpMarks free to start on Android. Build your spot database, track your catches, and start seeing patterns that put more fish on the bank.
           </p>
           <Link
             href="/download"

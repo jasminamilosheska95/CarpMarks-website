@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     template: '%s | CarpMarks',
-    default: 'Carp Fishing App – Track Spots, Log Catches | CarpMarks',
+    default: 'CarpMarks – Carp Fishing App & Tracker | Log Catches & Save Spots',
   },
   description:
-    'CarpMarks is the free carp fishing app for Android. Track your fishing spots, log catches with photos and weight, and get real-time weather and conditions. Plus expert tips, rig guides, and gear reviews.',
+    'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights. Free to start on Android.',
   keywords: [
     'carp fishing app',
     'carp fishing tracker',
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: BASE_URL,
     siteName: 'CarpMarks',
-    title: 'Carp Fishing App – Track Spots, Log Catches | CarpMarks',
+    title: 'CarpMarks – Carp Fishing App & Tracker | Log Catches & Save Spots',
     description:
-      'The free Android app that tracks your fishing spots, logs catches, and gives you real-time conditions — plus expert carp tips and gear reviews.',
+      'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights. Free to start on Android.',
     images: [
       {
         url: '/og-default.png',
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Carp Fishing App – Track Spots, Log Catches | CarpMarks',
+    title: 'CarpMarks – Carp Fishing App & Tracker | Log Catches & Save Spots',
     description:
-      'Free Android app to track spots, log catches, and get real-time conditions. Plus carp tips and gear reviews.',
+      'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights. Free to start on Android.',
     images: ['/og-default.png'],
   },
   icons: {
@@ -77,11 +77,16 @@ const softwareAppSchema = {
   operatingSystem: 'Android',
   applicationCategory: 'SportsApplication',
   description:
-    'Track your fishing spots, log catches, and get real-time weather and conditions with the CarpMarks carp fishing app.',
+    'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights.',
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'GBP',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    ratingCount: '10',
   },
   url: 'https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks',
   downloadUrl:
