@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const blogPostingSchema = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    '@type': ['Article', 'BlogPosting'],
     headline: meta.title,
     description: meta.excerpt,
     datePublished: meta.date,
@@ -92,6 +92,18 @@ export default async function BlogPostPage({ params }: Props) {
     articleSection: meta.category,
   };
 
+  const faqSchema = meta.faqs?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: meta.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      }
+    : null;
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -107,6 +119,7 @@ export default async function BlogPostPage({ params }: Props) {
       <ReadingProgress />
       <StructuredData data={blogPostingSchema} />
       <StructuredData data={breadcrumbSchema} />
+      {faqSchema && <StructuredData data={faqSchema} />}
 
       {/* Hero */}
       <div className="relative bg-gradient-to-br from-[#05293D] via-[#073d59] to-[#0A4D68] text-white overflow-hidden">
@@ -169,6 +182,19 @@ export default async function BlogPostPage({ params }: Props) {
           <MDXRemote source={content} components={components} />
         </article>
 
+        {/* Inline app CTA */}
+        <div className="my-10 flex items-start gap-4 px-5 py-4 border-l-4 border-[#D4A574] bg-[#D4A574]/5 rounded-r-xl">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4A574" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Use <strong>CarpMarks</strong> to save this spot, log your session conditions, and track patterns across sessions —{' '}
+            <Link href="/download" className="text-[#0A4D68] font-bold hover:text-[#D4A574] transition-colors">
+              Download free on Android →
+            </Link>
+          </p>
+        </div>
+
         {/* Post footer */}
         <div className="mt-14 pt-8 border-t border-gray-200">
           <div className="flex items-center justify-between flex-wrap gap-4">
@@ -199,21 +225,19 @@ export default async function BlogPostPage({ params }: Props) {
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
               </svg>
             </div>
-            <h3 className="text-lg font-bold mb-2">Log It with CarpMarks</h3>
+            <h3 className="text-lg font-bold mb-2">Track This with the CarpMarks App</h3>
             <p className="text-white/70 text-sm mb-5 max-w-sm mx-auto">
-              Track every session, save your best spots, and build a personal fishing diary on your phone.
+              Save your spots, log every catch with bait and weight, and build a personal fishing diary — free on Android.
             </p>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/download"
               className="btn-shimmer inline-flex items-center gap-2 bg-[#D4A574] text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-[#c49464] active:scale-95 transition-all duration-150 shadow-md shadow-[#D4A574]/25"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
               </svg>
-              Download Free on Android
-            </a>
+              Download the CarpMarks App — Free
+            </Link>
           </div>
         </div>
       </div>

@@ -81,14 +81,12 @@ export default function GearPage() {
           <p className="text-white/65 mb-6">
             Log every catch with bait, weight, and photos. Save your best spots and check conditions on the map — all in one free app.
           </p>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/download"
             className="inline-block bg-[#D4A574] text-white px-8 py-3.5 rounded-xl font-bold hover:bg-[#c49464] transition-colors"
           >
-            Download Free on Google Play
-          </a>
+            Download the CarpMarks App — Free
+          </Link>
         </div>
       </div>
     </div>

@@ -4,6 +4,11 @@ import matter from 'gray-matter';
 
 const BLOG_DIR = path.join(process.cwd(), 'content/blog');
 
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -11,6 +16,7 @@ export interface BlogPost {
   date: string;
   category: string;
   readTime: string;
+  faqs?: FAQ[];
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -31,6 +37,7 @@ export function getAllPosts(): BlogPost[] {
         date: data.date as string,
         category: data.category as string,
         readTime: data.readTime as string,
+        faqs: data.faqs as FAQ[] | undefined,
       };
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -51,6 +58,7 @@ export function getPostBySlug(slug: string): { meta: BlogPost; content: string }
       date: data.date as string,
       category: data.category as string,
       readTime: data.readTime as string,
+      faqs: data.faqs as FAQ[] | undefined,
     },
     content,
   };

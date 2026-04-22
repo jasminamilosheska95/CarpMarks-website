@@ -14,18 +14,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     template: '%s | CarpMarks',
-    default: 'CarpMarks – Carp Fishing Tips, Gear Reviews & App',
+    default: 'Carp Fishing App – Track Spots, Log Catches | CarpMarks',
   },
   description:
-    'Expert carp fishing tips, rig guides, gear reviews, and bait advice — plus the CarpMarks app to track your spots and catches. Available on Android.',
+    'CarpMarks is the free carp fishing app for Android. Track your fishing spots, log catches with photos and weight, and get real-time weather and conditions. Plus expert tips, rig guides, and gear reviews.',
   keywords: [
-    'carp fishing',
+    'carp fishing app',
+    'carp fishing tracker',
+    'best carp fishing app android',
+    'fishing spots tracker',
+    'carp catch log',
     'carp fishing tips',
     'carp rigs',
     'carp bait',
-    'carp fishing app',
-    'best carp gear',
-    'fishing spots tracker',
+    'carp fishing gear',
   ],
   authors: [{ name: 'CarpMarks' }],
   openGraph: {
@@ -33,23 +35,23 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: BASE_URL,
     siteName: 'CarpMarks',
-    title: 'CarpMarks – Carp Fishing Tips, Gear Reviews & App',
+    title: 'Carp Fishing App – Track Spots, Log Catches | CarpMarks',
     description:
-      'Expert carp fishing tips, rig guides, gear reviews, and bait advice — plus the CarpMarks app to track your spots and catches.',
+      'The free Android app that tracks your fishing spots, logs catches, and gives you real-time conditions — plus expert carp tips and gear reviews.',
     images: [
       {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: 'CarpMarks – Carp Fishing Companion App',
+        alt: 'CarpMarks – Free Carp Fishing App for Android',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CarpMarks – Carp Fishing Tips, Gear Reviews & App',
+    title: 'Carp Fishing App – Track Spots, Log Catches | CarpMarks',
     description:
-      'Expert carp fishing tips, rig guides, gear reviews and the CarpMarks app for Android.',
+      'Free Android app to track spots, log catches, and get real-time conditions. Plus carp tips and gear reviews.',
     images: ['/og-default.png'],
   },
   icons: {
@@ -66,6 +68,25 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+};
+
+const softwareAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'CarpMarks',
+  operatingSystem: 'Android',
+  applicationCategory: 'SportsApplication',
+  description:
+    'Track your fishing spots, log catches, and get real-time weather and conditions with the CarpMarks carp fishing app.',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'GBP',
+  },
+  url: 'https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks',
+  downloadUrl:
+    'https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks',
+  author: { '@type': 'Organization', name: 'CarpMarks', url: BASE_URL },
 };
 
 const organizationSchema = {
@@ -105,6 +126,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-50`}>
+        <StructuredData data={softwareAppSchema} />
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
         <Header />

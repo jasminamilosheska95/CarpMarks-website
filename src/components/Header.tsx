@@ -37,7 +37,7 @@ export default function Header() {
         <Link href="/" className="flex items-center flex-shrink-0 group">
           <img
             src="/logo-white.png"
-            alt="CarpMarks"
+            alt="CarpMarks – Free Carp Fishing App for Android"
             className="h-14 w-auto transition-opacity duration-200 group-hover:opacity-90"
           />
         </Link>
@@ -64,18 +64,15 @@ export default function Header() {
             );
           })}
 
-          <a
-            href="https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/download"
             className="ml-3 btn-shimmer inline-flex items-center gap-2 bg-[#D4A574] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[#c49464] active:scale-95 transition-all duration-150 shadow-md shadow-[#D4A574]/20"
           >
-            {/* Google Play icon */}
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
             </svg>
             Download App
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -128,17 +125,15 @@ export default function Header() {
             );
           })}
 
-          <a
-            href="https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/download"
             className="mt-2 flex items-center justify-center gap-2 bg-[#D4A574] text-white px-4 py-3 rounded-lg font-semibold hover:bg-[#c49464] transition-colors"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
             </svg>
             Download App
-          </a>
+          </Link>
         </div>
       </div>
     </header>
