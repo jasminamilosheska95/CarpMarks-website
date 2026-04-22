@@ -8,7 +8,7 @@ const PLAY_STORE_URL =
 export const metadata: Metadata = {
   title: 'Download CarpMarks – Free Carp Fishing App for Android',
   description:
-    'Download CarpMarks free to start on Android. The carp fishing tracker app to save spots, log catches, monitor weather conditions, and improve every session.',
+    'Download CarpMarks free to start on Android. The carp fishing app that logs catches, saves GPS spots and gives AI fishing insights. Free to start.',
   alternates: { canonical: `${BASE_URL}/download` },
   keywords: [
     'best carp fishing app android',
@@ -29,39 +29,6 @@ export const metadata: Metadata = {
   },
 };
 
-const features = [
-  {
-    title: 'Save Fishing Spots',
-    description:
-      'Pin any location on an interactive map with photos and notes. Never forget a productive swim again.',
-  },
-  {
-    title: 'Log Every Catch',
-    description:
-      'Record species, weight, bait, rig, and photos for each catch. Build a searchable personal catch history.',
-  },
-  {
-    title: 'Real-Time Conditions',
-    description:
-      'Live weather, barometric pressure trends, wind direction, and moon phase data for any water you fish.',
-  },
-  {
-    title: 'Smart Notifications',
-    description:
-      'Get alerted when conditions are perfect at your saved spots — so you never miss a prime feeding window.',
-  },
-  {
-    title: 'CarpMarks AI',
-    description:
-      'AI-powered insights on the best spots, conditions, and tactics based on your own catch data.',
-  },
-  {
-    title: 'Personal Stats',
-    description:
-      'Personal bests, session totals, and catch trends — all tracked automatically as you fish.',
-  },
-];
-
 const softwareAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -69,21 +36,21 @@ const softwareAppSchema = {
   operatingSystem: 'Android',
   applicationCategory: 'SportsApplication',
   description:
-    'Free carp fishing app for Android. Track fishing spots, log catches with photos and weight, monitor real-time weather and conditions.',
+    'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights.',
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'GBP',
   },
-  url: PLAY_STORE_URL,
-  downloadUrl: PLAY_STORE_URL,
-  author: { '@type': 'Organization', name: 'CarpMarks', url: BASE_URL },
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5',
     bestRating: '5',
-    ratingCount: '1',
+    ratingCount: '10',
   },
+  url: PLAY_STORE_URL,
+  downloadUrl: PLAY_STORE_URL,
+  author: { '@type': 'Organization', name: 'CarpMarks', url: BASE_URL },
 };
 
 const faqSchema = {
@@ -95,7 +62,23 @@ const faqSchema = {
       name: 'Is CarpMarks free to download?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — CarpMarks is completely free to download on Android via Google Play. There are no upfront costs.',
+        text: 'Yes — CarpMarks is free to start on Android. The free plan includes 3 saved spots and 10 logged catches. Upgrade to Premium for unlimited spots, catches, smart alerts, and AI insights.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is included in the free plan?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The free plan includes up to 3 saved fishing spots, up to 10 logged catches with photos, real-time weather and conditions for your spots, and access to the full map and session logging interface.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does CarpMarks Premium include?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'CarpMarks Premium gives you unlimited saved spots, unlimited catch logging, smart condition alerts when your spots are fishing well, and CarpMarks AI — personalised bait and tactic insights based on your own catch data.',
       },
     },
     {
@@ -108,117 +91,205 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'What can I track with the CarpMarks app?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'You can save fishing spots on a map with notes and photos, log catches with species, weight, bait, and images, check real-time weather and conditions, and view your personal catch history and stats.',
-      },
-    },
-    {
-      '@type': 'Question',
       name: 'Does CarpMarks work offline?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Core features like logging catches and viewing saved spots work offline. Weather and condition data requires an internet connection.',
+        text: 'CarpMarks requires an internet connection to log catches, save spots, and fetch live conditions. Make sure you have a data signal or Wi-Fi when using the app.',
       },
     },
   ],
 };
 
+const CheckIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#0A4D68] flex-shrink-0 mt-0.5">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+);
+
+const CrossIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-300 flex-shrink-0 mt-0.5">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+);
+
 export default function DownloadPage() {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <>
       <StructuredData data={softwareAppSchema} />
       <StructuredData data={faqSchema} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#03192A] via-[#05293D] to-[#0A4D68] text-white relative overflow-hidden py-24 px-4">
+      <section className="bg-gradient-to-br from-[#03192A] via-[#05293D] to-[#0A4D68] text-white relative overflow-hidden" style={{ paddingTop: '7rem', paddingBottom: '6rem' }}>
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '28px 28px' }} />
-        <div className="absolute top-16 right-16 w-80 h-80 rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(212,165,116,0.18) 0%, transparent 70%)' }} />
+        <div className="absolute top-16 left-12 w-80 h-80 rounded-full blur-3xl animate-float-slow pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(212,165,116,0.15) 0%, transparent 70%)' }} />
+        <div className="absolute bottom-24 right-8 w-96 h-96 rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(10,77,104,0.4) 0%, transparent 70%)' }} />
 
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 border border-[#D4A574]/40 text-[#D4A574] px-4 py-1.5 rounded-full text-xs font-semibold mb-8 tracking-widest uppercase" style={{ background: 'rgba(212,165,116,0.12)' }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4A574] animate-pulse" />
-            Free to Start on Android
-          </span>
+        <div className="max-w-4xl mx-auto text-center px-4 relative z-10">
+          <div className="animate-fade-in-up">
+            <span className="inline-flex items-center gap-2 border border-[#D4A574]/40 text-[#D4A574] px-4 py-1.5 rounded-full text-xs font-semibold mb-8 tracking-widest uppercase" style={{ background: 'rgba(212,165,116,0.12)' }}>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D4A574] animate-pulse" />
+              Free to Start on Android
+            </span>
+          </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            The Best Carp Fishing App<br className="hidden sm:block" />
-            <span className="text-[#D4A574]"> for Android</span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight animate-fade-in-up delay-150">
+            Download the Free<br className="hidden sm:block" />
+            <span className="text-[#D4A574]"> Carp Fishing App</span>
           </h1>
 
-          <p className="text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-            CarpMarks is the free carp fishing tracker app that saves your spots, logs every catch, and shows you the conditions — so every session counts.
+          <p className="text-xl text-white/65 max-w-2xl mx-auto mt-6 mb-10 leading-relaxed animate-fade-in-up delay-300">
+            CarpMarks is the carp fishing tracker built for serious anglers. Log every catch, save your best spots, check live conditions and get AI-powered insights — all in one app.
           </p>
 
-          <a
-            href={PLAY_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-shimmer inline-flex items-center gap-3 bg-[#D4A574] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#c49464] transition-all shadow-2xl hover:shadow-[#D4A574]/30 hover:-translate-y-0.5 active:translate-y-0"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
-            </svg>
-            Download Free on Google Play
-          </a>
-          <p className="text-white/35 text-sm mt-4">iOS coming soon · No account required to get started</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-shimmer inline-flex items-center justify-center gap-3 bg-[#D4A574] text-white px-10 py-4 rounded-xl font-bold text-base hover:bg-[#c49464] transition-all shadow-2xl hover:shadow-[#D4A574]/30 hover:-translate-y-0.5 active:translate-y-0"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
+              </svg>
+              Download Free on Google Play
+            </a>
+          </div>
+          <p className="text-white/30 text-xs mt-4">iOS coming soon</p>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none" style={{ height: '48px' }}>
-          <svg viewBox="0 0 1440 48" preserveAspectRatio="none" style={{ width: '100%', height: '48px', display: 'block' }}>
-            <path d="M0,24 C360,48 720,0 1080,24 C1260,36 1350,12 1440,24 L1440,48 L0,48 Z" fill="#f9fafb"/>
+        <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none" style={{ height: '64px' }}>
+          <svg className="hero-wave" viewBox="0 0 2880 64" preserveAspectRatio="none" style={{ height: '64px' }}>
+            <path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 C1680,64 1920,0 2160,32 C2400,64 2640,0 2880,32 L2880,64 L0,64 Z" fill="#f9fafb"/>
           </svg>
         </div>
       </section>
 
-      {/* Social proof bar */}
-      <section className="bg-[#0A4D68] py-5 px-4">
-        <div className="max-w-3xl mx-auto flex flex-wrap items-center justify-center gap-8 text-sm text-white/80">
-          <span className="flex items-center gap-2"><span className="text-[#D4A574] font-bold">5,000+</span> catches logged</span>
-          <span className="text-white/20 hidden sm:block">|</span>
-          <span className="flex items-center gap-2"><span className="text-[#D4A574] font-bold">3,000+</span> spots saved</span>
-          <span className="text-white/20 hidden sm:block">|</span>
-          <span className="flex items-center gap-2"><span className="text-[#D4A574] font-bold">5★</span> rated on Google Play</span>
-          <span className="text-white/20 hidden sm:block">|</span>
-          <span className="flex items-center gap-2"><span className="text-[#D4A574] font-bold">Free</span> — no subscription</span>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="max-w-5xl mx-auto px-4 py-20">
-        <div className="text-center mb-14">
-          <span className="text-[#D4A574] text-xs font-bold uppercase tracking-widest">What You Get</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0A4D68] mt-3 mb-4">
-            Everything a Serious Carp Angler Needs
-          </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
-            Built specifically for carp fishing — not a generic fishing app adapted after the fact.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {features.map((f) => (
-            <div key={f.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-[#D4A574]/30 transition-all">
-              <h3 className="font-bold text-gray-900 mb-2">{f.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{f.description}</p>
+      {/* Stats bar */}
+      <section className="bg-[#0A4D68] px-4" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-white/10">
+          {[
+            { value: '5,000+', label: 'Catches Logged' },
+            { value: '3,000+', label: 'Spots Saved' },
+            { value: '5★', label: 'App Rating' },
+            { value: 'Free', label: 'to Start' },
+          ].map((s, i) => (
+            <div key={s.label} className="text-center px-4" style={{ animationDelay: `${i * 100}ms` }}>
+              <div className="text-[#D4A574] font-black text-2xl md:text-3xl leading-none tracking-tight">{s.value}</div>
+              <div className="text-white/50 text-[11px] mt-1.5 tracking-wide uppercase font-medium">{s.label}</div>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Free vs Premium */}
+      <section className="bg-gray-50 px-4" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-14">
+            <span className="text-[#D4A574] text-xs font-bold uppercase tracking-widest">Pricing</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0A4D68] mt-3 mb-4 leading-tight">
+              Free to Start. Upgrade When You're Ready.
+            </h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-lg">
+              Start for free with no credit card required. Upgrade to Premium when you want unlimited access and advanced features.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Free plan */}
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+              <div className="mb-6">
+                <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Free</span>
+                <div className="text-4xl font-black text-gray-900 mt-1">£0</div>
+                <p className="text-gray-500 text-sm mt-1">No credit card needed</p>
+              </div>
+              <ul className="space-y-3 mb-8">
+                {[
+                  '3 saved fishing spots',
+                  '10 logged catches',
+                  'Real-time weather & conditions',
+                  'Full map access',
+                  'Catch photos & bait logging',
+                  'Rig tracking',
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-sm text-gray-700">
+                    <CheckIcon />
+                    {f}
+                  </li>
+                ))}
+                {[
+                  'Smart condition alerts',
+                  'CarpMarks AI insights',
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-sm text-gray-400">
+                    <CrossIcon />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center w-full border-2 border-[#0A4D68] text-[#0A4D68] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#0A4D68] hover:text-white transition-all"
+              >
+                Download Free
+              </a>
+            </div>
+
+            {/* Premium plan */}
+            <div className="bg-gradient-to-br from-[#05293D] to-[#0A4D68] rounded-2xl shadow-xl p-8 text-white relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="bg-[#D4A574] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Popular</span>
+              </div>
+              <div className="mb-6">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#D4A574]">Premium</span>
+                <div className="text-4xl font-black text-white mt-1">Upgrade</div>
+                <p className="text-white/50 text-sm mt-1">Monthly or yearly plans</p>
+              </div>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Unlimited saved spots',
+                  'Unlimited catch logging',
+                  'Real-time weather & conditions',
+                  'Full map access',
+                  'Catch photos & bait logging',
+                  'Rig tracking',
+                  'Smart condition alerts',
+                  'CarpMarks AI insights',
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-sm text-white/90">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4A574" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-shimmer block text-center w-full bg-[#D4A574] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#c49464] transition-all shadow-lg shadow-[#D4A574]/25"
+              >
+                Download &amp; Upgrade in App
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className="bg-white border-t border-gray-100 py-20 px-4">
+      <section className="bg-white border-t border-gray-100 px-4" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-[#D4A574] text-xs font-bold uppercase tracking-widest">FAQ</span>
-            <h2 className="text-3xl font-bold text-[#0A4D68] mt-3">Common Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0A4D68] mt-3">Common Questions</h2>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faqSchema.mainEntity.map((item) => (
-              <div key={item.name} className="border border-gray-100 rounded-xl p-6 bg-gray-50">
+              <div key={item.name} className="border border-gray-100 rounded-2xl p-6 bg-gray-50 hover:border-[#D4A574]/30 transition-all">
                 <h3 className="font-bold text-gray-900 mb-2">{item.name}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.acceptedAnswer.text}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
@@ -226,23 +297,34 @@ export default function DownloadPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-gradient-to-br from-[#05293D] to-[#0A4D68] py-20 px-4 text-center text-white">
-        <h2 className="text-3xl font-bold mb-4">Start Fishing Smarter Today</h2>
-        <p className="text-white/65 mb-8 max-w-md mx-auto">
-          Download CarpMarks free to start on Android and start building the spot database and catch history that will improve every future session.
-        </p>
-        <a
-          href={PLAY_STORE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-shimmer inline-flex items-center gap-3 bg-[#D4A574] text-white px-10 py-4 rounded-xl font-bold text-base hover:bg-[#c49464] transition-all shadow-xl hover:-translate-y-0.5"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
-          </svg>
-          Download Free on Google Play
-        </a>
+      <section className="relative overflow-hidden px-4" style={{ paddingTop: '6rem', paddingBottom: '6rem', background: 'linear-gradient(135deg, #03192A 0%, #05293D 50%, #0A4D68 100%)' }}>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full blur-3xl" style={{ background: 'radial-gradient(circle, rgba(212,165,116,0.2) 0%, transparent 70%)' }} />
+          <div className="absolute -bottom-12 -left-12 w-80 h-80 rounded-full blur-3xl" style={{ background: 'radial-gradient(circle, rgba(10,77,104,0.5) 0%, transparent 70%)' }} />
+        </div>
+        <div className="max-w-2xl mx-auto text-center relative z-10">
+          <span className="text-[#D4A574] text-xs font-bold uppercase tracking-widest">Start Today</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-4 leading-tight">
+            Ready to Fish Smarter?
+          </h2>
+          <p className="text-white/60 mb-8 text-lg leading-relaxed">
+            Download free to start — no credit card, no commitment. Upgrade to Premium inside the app whenever you're ready.
+          </p>
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-shimmer inline-flex items-center gap-3 text-white px-10 py-4 rounded-xl font-bold text-base transition-all shadow-2xl hover:-translate-y-0.5 hover:shadow-[#D4A574]/30"
+            style={{ background: 'linear-gradient(135deg, #D4A574, #b8854f)' }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
+            </svg>
+            Download Free on Google Play
+          </a>
+          <p className="text-white/30 text-xs mt-4">iOS coming soon</p>
+        </div>
       </section>
-    </div>
+    </>
   );
 }
