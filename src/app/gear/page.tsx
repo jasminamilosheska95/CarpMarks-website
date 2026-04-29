@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Carp Fishing Gear Guide – Top Picks for 2026',
   description:
-    'Curated carp fishing gear across every category — rods, reels, bite alarms, bivvies, bait, and terminal tackle. All linked to Amazon UK.',
+    'Curated carp fishing gear across every category — rods, reels, bite alarms, bivvies, bait, and terminal tackle. All linked to Amazon US.',
   alternates: { canonical: 'https://www.carpmarks.com/gear' },
 };
 
@@ -25,7 +25,7 @@ export default function GearPage() {
             Carp Fishing Gear Guide
           </h1>
           <p className="text-white/70 text-lg max-w-2xl leading-relaxed mb-6">
-            Curated picks across every category — rods, reels, bite alarms, bivvies, bait, and more. Every product links directly to Amazon UK.
+            Curated picks across every category — rods, reels, bite alarms, bivvies, bait, and more. Every product links directly to Amazon US.
           </p>
           <div className="flex flex-wrap gap-2">
             {productCategories.map((cat) => (
