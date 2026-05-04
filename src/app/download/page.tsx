@@ -233,6 +233,7 @@ export default function DownloadPage() {
                 {[
                   'Smart condition alerts',
                   'CarpMarks AI insights',
+                  'Fish Scanner',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-400">
                     <CrossIcon />
@@ -262,6 +263,7 @@ export default function DownloadPage() {
                   'Rig tracking',
                   'Smart condition alerts',
                   'CarpMarks AI insights',
+                  'Fish Scanner',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-white/90">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4A574" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5">
