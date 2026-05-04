@@ -59,6 +59,21 @@ const features = [
     color: 'from-[#0A4D68] to-[#083d54]',
   },
   {
+    title: 'Fish Scanner',
+    description: 'Point your camera at any carp and instantly identify the species with AI. Great for unfamiliar waters.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2.5"/>
+        <circle cx="12" cy="12" r="3.5"/>
+        <path d="M3 9V5.5A2.5 2.5 0 0 1 5.5 3H9"/>
+        <path d="M15 3h3.5A2.5 2.5 0 0 1 21 5.5V9"/>
+        <path d="M21 15v3.5A2.5 2.5 0 0 1 18.5 21H15"/>
+        <path d="M9 21H5.5A2.5 2.5 0 0 1 3 18.5V15"/>
+      </svg>
+    ),
+    color: 'from-[#D4A574] to-[#c49464]',
+  },
+  {
     title: 'Track Your Stats',
     description: 'Personal bests, catch history, and live conditions at your saved spots — all in one place.',
     icon: (
