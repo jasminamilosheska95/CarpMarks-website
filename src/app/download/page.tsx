@@ -4,23 +4,27 @@ import StructuredData from '@/components/StructuredData';
 const BASE_URL = 'https://www.carpmarks.com';
 const PLAY_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks';
+const APP_STORE_URL =
+  'https://apps.apple.com/mk/app/carpmarks-carp-fishing-app/id6763633214';
 
 export const metadata: Metadata = {
-  title: 'Download CarpMarks – Free Carp Fishing App for Android',
+  title: 'Download CarpMarks – Free Carp Fishing App for iOS & Android',
   description:
-    'Download CarpMarks free to start on Android. The carp fishing app that logs catches, saves GPS spots and gives AI fishing insights. Free to start.',
+    'Download CarpMarks free on iOS and Android. The carp fishing app that logs catches, saves GPS spots and gives AI fishing insights. Free to start.',
   alternates: { canonical: `${BASE_URL}/download` },
   keywords: [
-    'best carp fishing app android',
+    'best carp fishing app',
+    'carp fishing app iphone',
     'carp fishing tracker app',
     'free carp fishing app',
     'carp fishing spot tracker',
     'carp catch log app',
     'android fishing app',
+    'ios fishing app',
     'carp fishing companion app',
   ],
   openGraph: {
-    title: 'Download CarpMarks – Free Carp Fishing App for Android',
+    title: 'Download CarpMarks – Free Carp Fishing App for iOS & Android',
     description:
       'Save spots, log catches, check conditions — the free carp fishing app built for serious anglers.',
     url: `${BASE_URL}/download`,
@@ -33,7 +37,7 @@ const softwareAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'CarpMarks',
-  operatingSystem: 'Android',
+  operatingSystem: 'Android, iOS',
   applicationCategory: 'SportsApplication',
   description:
     'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights.',
@@ -86,7 +90,7 @@ const faqSchema = {
       name: 'Is CarpMarks available on iPhone (iOS)?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'CarpMarks is currently available on Android only. An iOS version is in development and will be released soon.',
+        text: 'Yes — CarpMarks is available on both iOS and Android. Download it free from the App Store or Google Play.',
       },
     },
     {
@@ -128,7 +132,7 @@ export default function DownloadPage() {
           <div className="animate-fade-in-up">
             <span className="inline-flex items-center gap-2 border border-[#D4A574]/40 text-[#D4A574] px-4 py-1.5 rounded-full text-xs font-semibold mb-8 tracking-widest uppercase" style={{ background: 'rgba(212,165,116,0.12)' }}>
               <span className="w-1.5 h-1.5 rounded-full bg-[#D4A574] animate-pulse" />
-              Free to Start on Android
+              Free on iOS &amp; Android
             </span>
           </div>
 
@@ -143,6 +147,17 @@ export default function DownloadPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
             <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-shimmer inline-flex items-center justify-center gap-3 bg-white text-[#0A4D68] px-10 py-4 rounded-xl font-bold text-base hover:bg-gray-100 transition-all shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25zM17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.37.07 2.32.85 3.12.87 1.2-.24 2.34-1.03 3.63-.89 1.58.19 2.77.89 3.54 2.26-3.25 1.95-2.73 5.96.41 7.36-.57 1.28-1.31 2.54-2.7 3.28z"/>
+              </svg>
+              Download Free on App Store
+            </a>
+            <a
               href={PLAY_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -154,7 +169,6 @@ export default function DownloadPage() {
               Download Free on Google Play
             </a>
           </div>
-          <p className="text-white/30 text-xs mt-4">iOS coming soon</p>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none" style={{ height: '64px' }}>
@@ -226,14 +240,24 @@ export default function DownloadPage() {
                   </li>
                 ))}
               </ul>
-              <a
-                href={PLAY_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center w-full border-2 border-[#0A4D68] text-[#0A4D68] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#0A4D68] hover:text-white transition-all"
-              >
-                Download Free
-              </a>
+              <div className="flex flex-col gap-2">
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center w-full border-2 border-[#0A4D68] text-[#0A4D68] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#0A4D68] hover:text-white transition-all"
+                >
+                  App Store
+                </a>
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center w-full border-2 border-[#0A4D68] text-[#0A4D68] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#0A4D68] hover:text-white transition-all"
+                >
+                  Google Play
+                </a>
+              </div>
             </div>
 
             {/* Premium plan */}
@@ -265,14 +289,24 @@ export default function DownloadPage() {
                   </li>
                 ))}
               </ul>
-              <a
-                href={PLAY_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-shimmer block text-center w-full bg-[#D4A574] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#c49464] transition-all shadow-lg shadow-[#D4A574]/25"
-              >
-                Download &amp; Upgrade in App
-              </a>
+              <div className="flex flex-col gap-2">
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-shimmer block text-center w-full bg-[#D4A574] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#c49464] transition-all shadow-lg shadow-[#D4A574]/25"
+                >
+                  App Store
+                </a>
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-shimmer block text-center w-full bg-[#D4A574] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#c49464] transition-all shadow-lg shadow-[#D4A574]/25"
+                >
+                  Google Play
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -310,19 +344,31 @@ export default function DownloadPage() {
           <p className="text-white/60 mb-8 text-lg leading-relaxed">
             Download free to start — no credit card, no commitment. Upgrade to Premium inside the app whenever you're ready.
           </p>
-          <a
-            href={PLAY_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-shimmer inline-flex items-center gap-3 text-white px-10 py-4 rounded-xl font-bold text-base transition-all shadow-2xl hover:-translate-y-0.5 hover:shadow-[#D4A574]/30"
-            style={{ background: 'linear-gradient(135deg, #D4A574, #b8854f)' }}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
-            </svg>
-            Download Free on Google Play
-          </a>
-          <p className="text-white/30 text-xs mt-4">iOS coming soon</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-shimmer inline-flex items-center justify-center gap-3 bg-white text-[#0A4D68] px-10 py-4 rounded-xl font-bold text-base transition-all shadow-2xl hover:-translate-y-0.5"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25zM17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.37.07 2.32.85 3.12.87 1.2-.24 2.34-1.03 3.63-.89 1.58.19 2.77.89 3.54 2.26-3.25 1.95-2.73 5.96.41 7.36-.57 1.28-1.31 2.54-2.7 3.28z"/>
+              </svg>
+              App Store
+            </a>
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-shimmer inline-flex items-center justify-center gap-3 text-white px-10 py-4 rounded-xl font-bold text-base transition-all shadow-2xl hover:-translate-y-0.5 hover:shadow-[#D4A574]/30"
+              style={{ background: 'linear-gradient(135deg, #D4A574, #b8854f)' }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
+              </svg>
+              Google Play
+            </a>
+          </div>
         </div>
       </section>
     </>
