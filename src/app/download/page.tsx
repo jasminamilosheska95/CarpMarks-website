@@ -240,24 +240,6 @@ export default function DownloadPage() {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-col gap-2">
-                <a
-                  href={APP_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center w-full border-2 border-[#0A4D68] text-[#0A4D68] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#0A4D68] hover:text-white transition-all"
-                >
-                  App Store
-                </a>
-                <a
-                  href={PLAY_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center w-full border-2 border-[#0A4D68] text-[#0A4D68] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#0A4D68] hover:text-white transition-all"
-                >
-                  Google Play
-                </a>
-              </div>
             </div>
 
             {/* Premium plan */}
@@ -289,24 +271,6 @@ export default function DownloadPage() {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-col gap-2">
-                <a
-                  href={APP_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-shimmer block text-center w-full bg-[#D4A574] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#c49464] transition-all shadow-lg shadow-[#D4A574]/25"
-                >
-                  App Store
-                </a>
-                <a
-                  href={PLAY_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-shimmer block text-center w-full bg-[#D4A574] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#c49464] transition-all shadow-lg shadow-[#D4A574]/25"
-                >
-                  Google Play
-                </a>
-              </div>
             </div>
           </div>
         </div>
