@@ -24,6 +24,12 @@ const categoryColors: Record<string, string> = {
   Bait: 'bg-lime-50 text-lime-700 border-lime-200',
 };
 
+function shortDesc(text: string, max = 90): string {
+  const sentence = text.split(/\.\s/)[0];
+  const trimmed = sentence.length <= max ? sentence : text.slice(0, max).replace(/\s\S*$/, '');
+  return trimmed.endsWith('.') ? trimmed : trimmed + '…';
+}
+
 export default function GearCard({ product }: { product: Product }) {
   const isAwin = product.source === 'awin';
   const buyLabel = isAwin
@@ -76,7 +82,7 @@ export default function GearCard({ product }: { product: Product }) {
         </h3>
 
         {/* Short description */}
-        <p className="text-gray-500 text-xs leading-relaxed mb-3">{product.description}</p>
+        <p className="text-gray-500 text-xs leading-relaxed mb-3">{shortDesc(product.description)}</p>
 
         {/* Details link */}
         <Link
