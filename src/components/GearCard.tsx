@@ -33,17 +33,22 @@ export default function GearCard({ product }: { product: Product }) {
   return (
     <div className="bg-white rounded-xl border border-gray-200 hover:border-[#D4A574]/50 hover:shadow-md transition-all flex flex-col group">
 
-      {/* Product image (Awin products) */}
-      {product.imageUrl && (
-        <div className="h-44 overflow-hidden rounded-t-xl bg-gray-50 border-b border-gray-100 flex items-center justify-center p-3">
+      {/* Image area — always rendered so all cards have equal height */}
+      <div className="h-44 overflow-hidden rounded-t-xl bg-gray-50 border-b border-gray-100 flex items-center justify-center p-3">
+        {product.imageUrl ? (
           <img
             src={product.imageUrl}
             alt={product.title}
             className="max-h-full max-w-full object-contain"
             loading="lazy"
           />
-        </div>
-      )}
+        ) : (
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-gray-300">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+            <line x1="4" y1="22" x2="4" y2="15"/>
+          </svg>
+        )}
+      </div>
 
       <div className="p-5 flex-1">
         {/* Category + badge + price row */}
@@ -51,18 +56,11 @@ export default function GearCard({ product }: { product: Product }) {
           <span className={`text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full border ${categoryColors[product.category] ?? 'bg-gray-50 text-gray-600 border-gray-200'}`}>
             {product.category}
           </span>
-          <div className="flex items-center gap-2 flex-shrink-0">
-            {product.price && (
-              <span className="text-[10px] font-bold text-white bg-[#0A4D68] px-2 py-0.5 rounded-full">
-                {product.price}
-              </span>
-            )}
-            {product.badge && (
-              <span className="text-[10px] font-bold text-[#D4A574] uppercase tracking-wide">
-                {product.badge}
-              </span>
-            )}
-          </div>
+          {product.badge && (
+            <span className="text-[10px] font-bold text-[#D4A574] uppercase tracking-wide flex-shrink-0">
+              {product.badge}
+            </span>
+          )}
         </div>
 
         {/* Brand name (Awin only) */}

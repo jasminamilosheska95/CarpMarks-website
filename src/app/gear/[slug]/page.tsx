@@ -89,7 +89,6 @@ export default async function ProductPage(
       '@type': 'Offer',
       url: product.href,
       availability: 'https://schema.org/InStock',
-      ...(product.price ? { price: product.price.replace('£', ''), priceCurrency: 'GBP' } : {}),
       seller: { '@type': 'Organization', name: sellerName },
     },
   };
@@ -158,14 +157,6 @@ export default async function ProductPage(
           )}
 
           <div className="p-8">
-            {/* Price */}
-            {product.price && (
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-2xl font-bold text-[#0A4D68]">{product.price}</span>
-                <span className="text-xs text-gray-400">Price from {sellerName}</span>
-              </div>
-            )}
-
             {/* Short description */}
             <p className="text-gray-700 text-base leading-relaxed mb-6 font-medium text-justify">
               {product.description}
