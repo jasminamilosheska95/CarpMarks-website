@@ -1,3 +1,5 @@
+import awinData from './awin-products.json';
+
 export interface Product {
   slug: string;
   title: string;
@@ -6,6 +8,13 @@ export interface Product {
   category: string;
   href: string;
   badge?: string;
+  imageUrl?: string;
+  price?: string;
+  source?: 'amazon' | 'awin';
+  merchantName?: string;
+  brandName?: string;
+  specifications?: string;
+  rating?: string;
 }
 
 export interface ProductCategory {
@@ -253,8 +262,45 @@ export const productCategories: ProductCategory[] = [
   },
 ];
 
+const awinProducts: Product[] = awinData as unknown as Product[];
+
 export function getAllProducts(): Product[] {
-  return productCategories.flatMap((cat) => cat.products);
+  const amazon = productCategories.flatMap((cat) => cat.products);
+  return [...amazon, ...awinProducts];
+}
+
+// Returns categories with Awin products merged in, plus any new Awin-only sections
+export function getAllCategories(): ProductCategory[] {
+  const categoryKeys = productCategories.map((cat) =>
+    new Set(cat.products.map((p) => p.category))
+  );
+  const allExistingCategories = new Set(categoryKeys.flatMap((s) => [...s]));
+
+  const merged = productCategories.map((cat, i) => {
+    const awinForCat = awinProducts.filter((p) => categoryKeys[i].has(p.category));
+    return awinForCat.length
+      ? { ...cat, products: [...cat.products, ...awinForCat] }
+      : cat;
+  });
+
+  // Collect Awin products whose category doesn't appear in any existing section
+  const orphans = awinProducts.filter((p) => !allExistingCategories.has(p.category));
+  if (orphans.length === 0) return merged;
+
+  // Group orphans by category and append as new sections
+  const orphanSections = new Map<string, Product[]>();
+  for (const p of orphans) {
+    const list = orphanSections.get(p.category) ?? [];
+    list.push(p);
+    orphanSections.set(p.category, list);
+  }
+  const newSections: ProductCategory[] = [...orphanSections.entries()].map(([cat, products]) => ({
+    name: cat === 'Bait' ? 'Bait & Boilies' : cat,
+    slug: cat.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+    products,
+  }));
+
+  return [...merged, ...newSections];
 }
 
 export function getProductBySlug(slug: string): Product | undefined {

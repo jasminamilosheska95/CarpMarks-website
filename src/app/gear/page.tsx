@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { productCategories } from '@/data/products';
+import { getAllCategories } from '@/data/products';
 import GearCard from '@/components/GearCard';
 import type { Metadata } from 'next';
 
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function GearPage() {
+  const categories = getAllCategories();
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero */}
@@ -25,10 +26,10 @@ export default function GearPage() {
             Carp Fishing Gear Guide
           </h1>
           <p className="text-white/70 text-lg max-w-2xl leading-relaxed mb-6">
-            Curated picks across every category — rods, reels, bite alarms, bivvies, bait, and more. Every product links directly to Amazon US.
+            Curated picks across every category — rods, reels, bite alarms, bivvies, bait, and more. Top brands including Korda, Fox, Nash, Trakker and RidgeMonkey.
           </p>
           <div className="flex flex-wrap gap-2">
-            {productCategories.map((cat) => (
+            {categories.map((cat) => (
               <a
                 key={cat.slug}
                 href={`#${cat.slug}`}
@@ -48,15 +49,15 @@ export default function GearPage() {
             <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
           </svg>
           <p>
-            <strong>Affiliate Disclosure:</strong> As an Amazon Associate, we earn from qualifying purchases.
-            Links on this page are affiliate links — if you buy through them, we may earn a small commission at no extra cost to you.
+            <strong>Affiliate Disclosure:</strong> These are affiliate links — buying through them supports CarpMarks at no extra cost to you.
+            We participate in the Amazon Associates Programme and other affiliate programmes.
           </p>
         </div>
       </div>
 
       {/* Categories */}
       <div className="max-w-6xl mx-auto px-4 py-12 space-y-20">
-        {productCategories.map((category) => (
+        {categories.map((category) => (
           <section key={category.slug} id={category.slug}>
             <div className="flex items-center gap-4 mb-8">
               <div>

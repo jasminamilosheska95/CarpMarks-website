@@ -21,23 +21,56 @@ const categoryColors: Record<string, string> = {
   Eyewear: 'bg-sky-50 text-sky-700 border-sky-200',
   Storage: 'bg-rose-50 text-rose-700 border-rose-200',
   'Bank Sticks': 'bg-amber-50 text-amber-700 border-amber-200',
+  Bait: 'bg-lime-50 text-lime-700 border-lime-200',
 };
 
 export default function GearCard({ product }: { product: Product }) {
+  const isAwin = product.source === 'awin';
+  const buyLabel = isAwin
+    ? (product.merchantName ? `Buy at ${product.merchantName}` : 'View Product')
+    : 'View on Amazon';
+
   return (
     <div className="bg-white rounded-xl border border-gray-200 hover:border-[#D4A574]/50 hover:shadow-md transition-all flex flex-col group">
+
+      {/* Product image (Awin products) */}
+      {product.imageUrl && (
+        <div className="h-44 overflow-hidden rounded-t-xl bg-gray-50 border-b border-gray-100 flex items-center justify-center p-3">
+          <img
+            src={product.imageUrl}
+            alt={product.title}
+            className="max-h-full max-w-full object-contain"
+            loading="lazy"
+          />
+        </div>
+      )}
+
       <div className="p-5 flex-1">
-        {/* Category + badge row */}
-        <div className="flex items-center justify-between mb-3">
+        {/* Category + badge + price row */}
+        <div className="flex items-center justify-between mb-3 gap-2 flex-wrap">
           <span className={`text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full border ${categoryColors[product.category] ?? 'bg-gray-50 text-gray-600 border-gray-200'}`}>
             {product.category}
           </span>
-          {product.badge && (
-            <span className="text-[10px] font-bold text-[#D4A574] uppercase tracking-wide flex-shrink-0">
-              {product.badge}
-            </span>
-          )}
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {product.price && (
+              <span className="text-[10px] font-bold text-white bg-[#0A4D68] px-2 py-0.5 rounded-full">
+                {product.price}
+              </span>
+            )}
+            {product.badge && (
+              <span className="text-[10px] font-bold text-[#D4A574] uppercase tracking-wide">
+                {product.badge}
+              </span>
+            )}
+          </div>
         </div>
+
+        {/* Brand name (Awin only) */}
+        {product.brandName && (
+          <p className="text-[10px] font-semibold text-[#0A4D68]/60 uppercase tracking-widest mb-1">
+            {product.brandName}
+          </p>
+        )}
 
         {/* Title */}
         <h3 className="font-bold text-gray-900 text-sm leading-snug mb-2 group-hover:text-[#0A4D68] transition-colors">
@@ -59,15 +92,19 @@ export default function GearCard({ product }: { product: Product }) {
         </Link>
       </div>
 
-      {/* Amazon button */}
+      {/* Buy button */}
       <div className="px-5 pb-5">
         <a
           href={product.href}
           target="_blank"
           rel="noopener noreferrer sponsored"
-          className="flex items-center justify-center gap-2 bg-[#FF9900] text-white text-xs font-bold px-4 py-2.5 rounded-lg hover:bg-[#e08800] transition-colors w-full"
+          className={`flex items-center justify-center gap-2 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-colors w-full ${
+            isAwin
+              ? 'bg-[#0A4D68] hover:bg-[#083d52]'
+              : 'bg-[#FF9900] hover:bg-[#e08800]'
+          }`}
         >
-          View on Amazon
+          {buyLabel}
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
