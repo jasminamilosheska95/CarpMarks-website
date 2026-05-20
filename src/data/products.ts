@@ -277,14 +277,19 @@ export function getAllCategories(): ProductCategory[] {
   const allExistingCategories = new Set(categoryKeys.flatMap((s) => [...s]));
 
   const merged = productCategories.map((cat, i) => {
-    const awinForCat = awinProducts.filter((p) => categoryKeys[i].has(p.category));
+    const awinForCat = awinProducts.filter(
+      (p) => categoryKeys[i].has(p.category) || p.category.toLowerCase() === cat.name.toLowerCase()
+    );
     return awinForCat.length
       ? { ...cat, products: [...cat.products, ...awinForCat] }
       : cat;
   });
 
-  // Collect Awin products whose category doesn't appear in any existing section
-  const orphans = awinProducts.filter((p) => !allExistingCategories.has(p.category));
+  // Collect Awin products whose category doesn't match any existing section (by product category or section name)
+  const sectionNames = new Set(productCategories.map((c) => c.name.toLowerCase()));
+  const orphans = awinProducts.filter(
+    (p) => !allExistingCategories.has(p.category) && !sectionNames.has(p.category.toLowerCase())
+  );
   if (orphans.length === 0) return merged;
 
   // Group orphans by category and append as new sections
