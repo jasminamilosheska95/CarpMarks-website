@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "fetch:awin": "node scripts/fetch-awin-products.mjs",
+    "fetch:awin": "node scripts/fetch-awin-products.mjs && node scripts/sync-awin-to-app.mjs",
     "build": "node scripts/fetch-awin-products.mjs && next build",
     "start": "next start",
     "lint": "next lint"
