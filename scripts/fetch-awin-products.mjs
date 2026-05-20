@@ -242,6 +242,12 @@ function score(row, hIdx) {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 async function main() {
+  // Vercel blocks outbound network during build — use the committed JSON as-is
+  if (process.env.VERCEL) {
+    console.log('Vercel build detected — using committed awin-products.json (run fetch locally to refresh)');
+    return;
+  }
+
   const feedUrl = await getAwinFeedUrl();
   if (!feedUrl) {
     console.error('ERROR: AWIN_FEED_URL not set in .env.local');
