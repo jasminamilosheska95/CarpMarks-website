@@ -82,7 +82,7 @@ const faqSchema = {
       name: 'What does CarpMarks Premium include?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'CarpMarks Premium gives you unlimited saved spots, unlimited catch logging, smart condition alerts when your spots are fishing well, and CarpMarks AI — personalised bait and tactic insights based on your own catch data.',
+        text: 'CarpMarks Premium gives you unlimited saved spots, unlimited catch logging, smart condition alerts, a morning fishing digest, nearby catch alerts, pattern analytics, session planner, Fish Scanner, and CarpMarks AI — personalised bait and tactic insights based on your own catch data.',
       },
     },
     {
@@ -232,6 +232,10 @@ export default function DownloadPage() {
                 ))}
                 {[
                   'Smart condition alerts',
+                  'Morning fishing digest',
+                  'Nearby catch alerts',
+                  'Pattern analytics',
+                  'Session planner',
                   'CarpMarks AI insights',
                   'Fish Scanner',
                 ].map((f) => (
@@ -262,6 +266,10 @@ export default function DownloadPage() {
                   'Catch photos & bait logging',
                   'Rig tracking',
                   'Smart condition alerts',
+                  'Morning fishing digest',
+                  'Nearby catch alerts',
+                  'Pattern analytics',
+                  'Session planner',
                   'CarpMarks AI insights',
                   'Fish Scanner',
                 ].map((f) => (

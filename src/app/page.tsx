@@ -26,7 +26,7 @@ const features = [
   },
   {
     title: 'Real-Time Conditions',
-    description: 'Weather, pressure trends, wind direction, and moon phase data for any water.',
+    description: 'Weather, pressure trends, wind direction, and moon phase data for any water — plus a 5-day forecast so you can plan your sessions in advance.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
@@ -37,7 +37,7 @@ const features = [
   },
   {
     title: 'Smart Notifications',
-    description: 'Get alerted when conditions are perfect at your saved spots or when there are nearby catches — never miss a window.',
+    description: 'Get alerted when conditions are perfect at your spots, when other anglers catch fish nearby, and receive a morning digest every day to start your session right.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
@@ -50,7 +50,7 @@ const features = [
   },
   {
     title: 'CarpMarks AI',
-    description: 'Get AI-powered insights on the best spots, conditions, and tactics based on your personal catch data.',
+    description: 'Chat with an AI that knows your full catch history. Discover your patterns, plan your next session around the best conditions, and get personalised bait recommendations.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7H3a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2M7.5 13a1.5 1.5 0 0 0-1.5 1.5A1.5 1.5 0 0 0 7.5 16 1.5 1.5 0 0 0 9 14.5 1.5 1.5 0 0 0 7.5 13m9 0a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5 1.5 1.5 0 0 0 1.5-1.5A1.5 1.5 0 0 0 16.5 13M3 17h18v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2z"/>
