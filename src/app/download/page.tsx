@@ -224,7 +224,7 @@ export default function DownloadPage() {
                   'Full map access',
                   'Catch photos & bait logging',
                   'Rig tracking',
-                  'Community leaderboard',
+                  'Share catches & leaderboard',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-700">
                     <CheckIcon />
@@ -237,7 +237,6 @@ export default function DownloadPage() {
                   'Nearby catch alerts',
                   'Pattern analytics',
                   'Session planner',
-                  'Share catches & leaderboard',
                   'CarpMarks AI insights',
                   'Fish Scanner',
                 ].map((f) => (
