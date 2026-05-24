@@ -236,6 +236,7 @@ export default function DownloadPage() {
                   'Nearby catch alerts',
                   'Pattern analytics',
                   'Session planner',
+                  'Share catches & leaderboard',
                   'CarpMarks AI insights',
                   'Fish Scanner',
                 ].map((f) => (
@@ -270,6 +271,7 @@ export default function DownloadPage() {
                   'Nearby catch alerts',
                   'Pattern analytics',
                   'Session planner',
+                  'Share catches & leaderboard',
                   'CarpMarks AI insights',
                   'Fish Scanner',
                 ].map((f) => (
