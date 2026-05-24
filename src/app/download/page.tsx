@@ -224,6 +224,7 @@ export default function DownloadPage() {
                   'Full map access',
                   'Catch photos & bait logging',
                   'Rig tracking',
+                  'Community leaderboard',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-700">
                     <CheckIcon />
