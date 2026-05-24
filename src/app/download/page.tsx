@@ -266,12 +266,12 @@ export default function DownloadPage() {
                   'Full map access',
                   'Catch photos & bait logging',
                   'Rig tracking',
+                  'Share catches & leaderboard',
                   'Smart condition alerts',
                   'Morning fishing digest',
                   'Nearby catch alerts',
                   'Pattern analytics',
                   'Session planner',
-                  'Share catches & leaderboard',
                   'CarpMarks AI insights',
                   'Fish Scanner',
                 ].map((f) => (
