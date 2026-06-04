@@ -8,7 +8,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const BASE_URL = 'https://www.carpmarks.com';
+const BASE_URL = 'https://carpmarks.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Carp Fishing Gear Guide – Top Picks for 2026',
   description:
     'Curated carp fishing gear across every category — rods, reels, bite alarms, bivvies, bait, and terminal tackle. All linked to Amazon US.',
-  alternates: { canonical: 'https://www.carpmarks.com/gear' },
+  alternates: { canonical: 'https://carpmarks.com/gear/' },
 };
 
 export default function GearPage() {

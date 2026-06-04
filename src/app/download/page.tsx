@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import StructuredData from '@/components/StructuredData';
 
-const BASE_URL = 'https://www.carpmarks.com';
+const BASE_URL = 'https://carpmarks.com';
 const PLAY_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks';
 const APP_STORE_URL =
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Download CarpMarks – Free Carp Fishing App for iOS & Android',
   description:
     'Download CarpMarks free on iOS and Android. The carp fishing app that logs catches, saves GPS spots and gives AI fishing insights. Free to start.',
-  alternates: { canonical: `${BASE_URL}/download` },
+  alternates: { canonical: `${BASE_URL}/download/` },
   keywords: [
     'best carp fishing app',
     'carp fishing app iphone',

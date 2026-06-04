@@ -3,13 +3,13 @@ import Link from 'next/link';
 import StructuredData from '@/components/StructuredData';
 import type { Metadata } from 'next';
 
-const BASE_URL = 'https://www.carpmarks.com';
+const BASE_URL = 'https://carpmarks.com';
 
 export const metadata: Metadata = {
   title: 'Blog',
   description:
     'Carp fishing tips, gear reviews, rig guides, bait advice, and seasonal tactics from the CarpMarks team.',
-  alternates: { canonical: `${BASE_URL}/blog` },
+  alternates: { canonical: `${BASE_URL}/blog/` },
   openGraph: {
     title: 'CarpMarks Blog – Carp Fishing Tips, Gear & Guides',
     description: 'Gear reviews, rig guides, bait tactics, and seasonal carp fishing advice.',

@@ -4,7 +4,7 @@ import { getAllProducts, getProductBySlug } from '@/data/products';
 import StructuredData from '@/components/StructuredData';
 import type { Metadata } from 'next';
 
-const BASE_URL = 'https://www.carpmarks.com';
+const BASE_URL = 'https://carpmarks.com';
 
 export function generateStaticParams() {
   return getAllProducts().map((product) => ({ slug: product.slug }));

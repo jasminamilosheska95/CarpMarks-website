@@ -11,7 +11,7 @@ import type { Metadata } from 'next';
 
 const components = { AffiliateLink, ComparisonTable };
 
-const BASE_URL = 'https://www.carpmarks.com';
+const BASE_URL = 'https://carpmarks.com';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   try {
     const { meta } = getPostBySlug(slug);
-    const url = `${BASE_URL}/blog/${slug}`;
+    const url = `${BASE_URL}/blog/${slug}/`;
     return {
       title: meta.title,
       description: meta.excerpt,
