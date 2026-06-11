@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "fetch:awin": "node scripts/fetch-awin-products.mjs && node scripts/sync-awin-to-app.mjs",
-    "build": "node scripts/fetch-awin-products.mjs && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
