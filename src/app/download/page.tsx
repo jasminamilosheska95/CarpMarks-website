@@ -66,7 +66,7 @@ const faqSchema = {
       name: 'Is CarpMarks free to download?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — CarpMarks is free to start on Android. The free plan includes 3 saved spots and 20 logged catches. Upgrade to Premium for unlimited spots, catches, smart alerts, and AI insights.',
+        text: 'Yes — CarpMarks is free to start on Android. The free plan includes 3 saved spots and 15 logged catches. Upgrade to Premium for unlimited spots, catches, smart alerts, and AI insights.',
       },
     },
     {
@@ -74,7 +74,7 @@ const faqSchema = {
       name: 'What is included in the free plan?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The free plan includes up to 3 saved fishing spots, up to 20 logged catches with photos, real-time weather and conditions for your spots, and access to the full map and session logging interface.',
+        text: 'The free plan includes up to 3 saved fishing spots, up to 15 logged catches with photos, real-time weather and conditions for your spots, and access to the full map and session logging interface.',
       },
     },
     {
@@ -219,7 +219,7 @@ export default function DownloadPage() {
               <ul className="space-y-3 mb-8">
                 {[
                   '3 saved fishing spots',
-                  '20 logged catches',
+                  '15 logged catches',
                   'Real-time weather & conditions',
                   'Full map access',
                   'Catch photos & bait logging',
