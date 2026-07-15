@@ -14,7 +14,7 @@ export default function PrivacyPage() {
             ← Back to CarpMarks
           </Link>
           <h1 className="text-4xl font-bold mt-4 mb-2">Privacy Policy</h1>
-          <p className="text-white/60 text-sm">Last Updated: February 2026</p>
+          <p className="text-white/60 text-sm">Last Updated: July 2026</p>
         </div>
       </div>
 
@@ -247,10 +247,17 @@ export default function PrivacyPage() {
             in ownership or use of your data
           </li>
           <li>
-            <strong className="text-gray-900">Catch sharing (opt-in):</strong> If you enable the
-            "Share Catches" feature, your catch data (species, general location, and time) may be
-            shared with other users who have fishing spots nearby. This feature is off by default
-            and can be disabled at any time in your notification settings
+            <strong className="text-gray-900">Nearby catch alerts (opt-in):</strong> If you enable
+            the "Nearby Catch Alerts" feature, your catch data (species, general location, and
+            time) may be shared anonymously with other users who have fishing spots nearby. This
+            feature is off by default and can be disabled at any time in your notification settings
+          </li>
+          <li>
+            <strong className="text-gray-900">Community sharing (opt-in, per catch):</strong> If
+            you choose to share a catch with the community, that catch — including its photo,
+            species, weight, and catch details — is visible to other users in the community feed.
+            Sharing is off by default for each catch, and you can unshare any catch at any time
+            from the catch itself or from your profile
           </li>
           <li>
             <strong className="text-gray-900">With your consent:</strong> When you explicitly

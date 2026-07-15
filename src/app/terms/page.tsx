@@ -14,7 +14,7 @@ export default function TermsPage() {
             ← Back to CarpMarks
           </Link>
           <h1 className="text-4xl font-bold mt-4 mb-2">Terms of Service</h1>
-          <p className="text-white/60 text-sm">Last Updated: February 2026</p>
+          <p className="text-white/60 text-sm">Last Updated: July 2026</p>
         </div>
       </div>
 
@@ -131,10 +131,24 @@ export default function TermsPage() {
             Contains <strong className="text-gray-900">malware, viruses, or malicious code</strong>
           </li>
           <li>
+            Is <strong className="text-gray-900">falsified or misrepresented</strong>, including
+            photos you did not take yourself, catches logged as your own that are not, or
+            AI-generated or edited images presented as real catches
+          </li>
+          <li>
+            Depicts <strong className="text-gray-900">illegal fishing activity</strong>, such as
+            poaching, fishing out of season, or fishing on private waters without permission
+          </li>
+          <li>
             Otherwise{' '}
             <strong className="text-gray-900">violates applicable laws</strong>
           </li>
         </ul>
+        <p className="mb-6">
+          Content must also comply with our{' '}
+          <strong className="text-gray-900">Photo Guidelines (Section 4.5 below)</strong>, which we
+          may update from time to time.
+        </p>
 
         <h3 className="text-gray-900 font-bold text-lg mt-6 mb-3">4.3 Right to Remove Content</h3>
         <p className="mb-4">
@@ -172,6 +186,31 @@ export default function TermsPage() {
         <p className="mb-6">
           If you have concerns about content or misuse of the Service, please contact us at{' '}
           <strong className="text-gray-900">support@carpmarks.com</strong>.
+        </p>
+
+        <h3 className="text-gray-900 font-bold text-lg mt-6 mb-3">4.5 Photo Guidelines</h3>
+        <p className="mb-4">
+          These guidelines help us promote responsible fish handling and maintain a positive
+          experience for everyone in the CarpMarks community. Photos you upload should:
+        </p>
+        <ul className="list-disc pl-6 mb-6 space-y-2">
+          <li>
+            Show the fish{' '}
+            <strong className="text-gray-900">
+              held safely in a horizontal position over a mat, or resting safely on a mat
+            </strong>
+          </li>
+          <li>
+            <strong className="text-gray-900">
+              Not include blood, injuries, or other graphic content
+            </strong>
+          </li>
+          <li>
+            Clearly show the <strong className="text-gray-900">entire fish</strong>
+          </li>
+        </ul>
+        <p className="mb-6">
+          Photos that do not meet these guidelines may be removed under Section 4.3.
         </p>
 
         <h2 className="text-[#0A4D68] text-xl font-bold mt-10 mb-4">5. Acceptable Use</h2>
