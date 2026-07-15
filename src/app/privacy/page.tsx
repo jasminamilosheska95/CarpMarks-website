@@ -51,11 +51,12 @@ export default function PrivacyPage() {
           </li>
           <li>
             <strong className="text-gray-900">Fishing spot data:</strong> location coordinates, spot
-            names, notes, and photos
+            names, notes, water depth, and photos
           </li>
           <li>
-            <strong className="text-gray-900">Catch records:</strong> fish species, weight, bait
-            used, date, and photos
+            <strong className="text-gray-900">Catch records:</strong> fish species, weight, bait and
+            rig used, cast distance, date, notes, photos, and weather conditions at the time of the
+            catch
           </li>
           <li>
             <strong className="text-gray-900">Preferences:</strong> weight unit preference (lbs/kg),

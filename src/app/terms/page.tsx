@@ -56,6 +56,9 @@ export default function TermsPage() {
           <li>View current fishing conditions including weather and moon phase</li>
           <li>Receive push notifications when conditions are favorable</li>
           <li>Attach photos to spots and catches</li>
+          <li>Plan fishing sessions with the Session Planner (AI)</li>
+          <li>Identify fish species from catch photos with the scanner (AI)</li>
+          <li>Share catches with the community and view leaderboards</li>
           <li>View statistics and history of your fishing activities</li>
         </ul>
 
