@@ -161,10 +161,25 @@ export default function PrivacyPage() {
             <strong className="text-gray-900">Weather providers:</strong> Fishing condition
             information
           </li>
+          <li>
+            <strong className="text-gray-900">OpenAI:</strong> Powers the AI fishing assistant and
+            Session Planner briefs
+          </li>
         </ul>
-        <p className="mb-6">
+        <p className="mb-4">
           These services have their own privacy policies and we encourage you to review them. We do
           not control and are not responsible for the privacy practices of these third-party services.
+        </p>
+        <p className="mb-6">
+          <strong className="text-gray-900">AI features.</strong> When you use the AI assistant or
+          generate a Session Planner brief, we send your fishing data to OpenAI so it can generate a
+          response: your catch history (species, weights, dates, baits, rigs and the conditions
+          recorded with each catch), your fishing statistics, and the names of your saved spots.{' '}
+          <strong className="text-gray-900">
+            Your spot coordinates, email address and account details are never sent.
+          </strong>{' '}
+          This data is used only to answer your request. It is not used to train AI models, and
+          nothing is sent unless you choose to use an AI feature.
         </p>
 
         <h2 className="text-[#0A4D68] text-xl font-bold mt-10 mb-4">5. Location Data</h2>
