@@ -200,21 +200,16 @@ export default function HomePage() {
           </div>
 
           <div className="flex justify-center">
-            <div className="relative" style={{ width: '280px' }}>
-              {/* Phone frame */}
-              <div className="relative rounded-[2.5rem] bg-[#03192A] p-3 shadow-2xl">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#03192A] rounded-b-xl z-10" />
-                <video
-                  className="w-full aspect-[9/16] rounded-[1.75rem] object-cover"
-                  src="/app-video.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls
-                />
-              </div>
-            </div>
+            <video
+              className="rounded-[1.75rem] shadow-2xl"
+              style={{ width: '280px', aspectRatio: '9 / 16', objectFit: 'cover' }}
+              src="/app-video.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+            />
           </div>
         </div>
       </section>
