@@ -177,6 +177,48 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── App Preview Video ──────────────────────────────────────────── */}
+      <section className="bg-white px-4" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="text-[#D4A574] text-xs font-bold uppercase tracking-widest">See It In Action</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0A4D68] mt-3 mb-4 leading-tight">
+              Your Fishing Companion, In Your Pocket
+            </h2>
+            <p className="text-gray-500 text-lg leading-relaxed mb-8">
+              From marking a spot to logging a personal best, CarpMarks keeps everything a tap away on the bank.
+            </p>
+            <Link
+              href="/download"
+              className="btn-shimmer inline-flex items-center justify-center gap-2 bg-[#0A4D68] text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-[#083d54] transition-all shadow-lg hover:-translate-y-0.5"
+            >
+              Get the App
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </Link>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="relative" style={{ width: '280px' }}>
+              {/* Phone frame */}
+              <div className="relative rounded-[2.5rem] bg-[#03192A] p-3 shadow-2xl">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#03192A] rounded-b-xl z-10" />
+                <video
+                  className="w-full aspect-[9/16] rounded-[1.75rem] object-cover"
+                  src="/app-video.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Features ───────────────────────────────────────────────────── */}
       <section className="bg-gray-50 px-4" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
         <div className="max-w-6xl mx-auto">
