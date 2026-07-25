@@ -200,16 +200,21 @@ export default function HomePage() {
           </div>
 
           <div className="flex justify-center">
-            <video
-              className="rounded-[1.75rem] shadow-2xl"
-              style={{ width: '280px', aspectRatio: '9 / 16', objectFit: 'cover' }}
-              src="/app-video.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-            />
+            <div
+              className="rounded-[2rem] p-2 shadow-2xl"
+              style={{ background: 'linear-gradient(160deg, #0A4D68, #03192A)' }}
+            >
+              <video
+                className="rounded-[1.5rem]"
+                style={{ width: '280px', aspectRatio: '9 / 16', objectFit: 'cover' }}
+                src="/app-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              />
+            </div>
           </div>
         </div>
       </section>
