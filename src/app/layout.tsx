@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: 'CarpMarks – Carp Fishing App & Tracker | Log Catches & Save Spots',
   },
   description:
-    'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights. Free to start on Android.',
+    'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights. Free to start on iOS & Android.',
   keywords: [
     'carp fishing app',
     'carp fishing tracker',
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     siteName: 'CarpMarks',
     title: 'CarpMarks – Carp Fishing App & Tracker | Log Catches & Save Spots',
     description:
-      'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights. Free to start on Android.',
+      'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights. Free to start on iOS & Android.',
     images: [
       {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: 'CarpMarks – Free Carp Fishing App for Android',
+        alt: 'CarpMarks – Free Carp Fishing App for iOS & Android',
       },
     ],
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'CarpMarks – Carp Fishing App & Tracker | Log Catches & Save Spots',
     description:
-      'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights. Free to start on Android.',
+      'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights. Free to start on iOS & Android.',
     images: ['/og-default.png'],
   },
   icons: {

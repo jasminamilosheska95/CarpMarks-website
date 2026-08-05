@@ -37,7 +37,7 @@ export default function Header() {
         <Link href="/" className="flex items-center flex-shrink-0 group">
           <img
             src="/logo-white.png"
-            alt="CarpMarks – Free Carp Fishing App for Android"
+            alt="CarpMarks – Free Carp Fishing App for iOS & Android"
             className="h-14 w-auto transition-opacity duration-200 group-hover:opacity-90"
           />
         </Link>

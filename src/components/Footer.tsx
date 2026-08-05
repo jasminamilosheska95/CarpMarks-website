@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4">
-              <img src="/logo-white.png" alt="CarpMarks – Free Carp Fishing App for Android" className="h-11 w-auto" />
+              <img src="/logo-white.png" alt="CarpMarks – Free Carp Fishing App for iOS & Android" className="h-11 w-auto" />
             </div>
             <p className="text-white/55 text-sm leading-relaxed mb-5">
               Your personal carp fishing companion. Track spots, log catches, and fish smarter with data that actually improves your results.

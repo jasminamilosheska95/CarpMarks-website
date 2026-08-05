@@ -14,6 +14,17 @@ const features = [
     color: 'from-[#0A4D68] to-[#0d6b91]',
   },
   {
+    title: 'Lake Finder',
+    description: 'Browse real carp venues on the map — ticket prices, rules, and lake records added by anglers who fish them. Find your next water before you leave the house.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="7"/>
+        <path d="m21 21-4.3-4.3"/>
+      </svg>
+    ),
+    color: 'from-[#0A4D68] to-[#0d6b91]',
+  },
+  {
     title: 'Log Your Catches',
     description: 'Record every catch with species, weight, bait, rig, and photos. Build your personal fishing history.',
     icon: (

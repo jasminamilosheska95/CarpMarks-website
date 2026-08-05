@@ -66,7 +66,7 @@ const faqSchema = {
       name: 'Is CarpMarks free to download?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes — CarpMarks is free to start on Android. The free plan includes 3 saved spots and 15 logged catches. Upgrade to Premium for unlimited spots, catches, smart alerts, and AI insights.',
+        text: 'Yes — CarpMarks is free to start on iOS and Android. The free plan includes 3 saved spots and 15 logged catches. Upgrade to Premium for unlimited spots, catches, smart alerts, and AI insights.',
       },
     },
     {

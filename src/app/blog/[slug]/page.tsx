@@ -190,7 +190,7 @@ export default async function BlogPostPage({ params }: Props) {
           <p className="text-gray-700 text-sm leading-relaxed">
             Use <strong>CarpMarks</strong> to save this spot, log your session conditions, and track patterns across sessions —{' '}
             <Link href="/download" className="text-[#0A4D68] font-bold hover:text-[#D4A574] transition-colors">
-              Download free to start on Android →
+              Download free on iOS & Android →
             </Link>
           </p>
         </div>
@@ -227,7 +227,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
             <h3 className="text-lg font-bold mb-2">Track This with the CarpMarks App</h3>
             <p className="text-white/70 text-sm mb-5 max-w-sm mx-auto">
-              Save your spots, log every catch with bait and weight, and build a personal fishing diary — free to start on Android.
+              Save your spots, log every catch with bait and weight, and build a personal fishing diary — free to start on iOS & Android.
             </p>
             <Link
               href="/download"
