@@ -226,7 +226,7 @@ export default function DownloadPage() {
               <div className="mb-6">
                 <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Free</span>
                 <div className="text-4xl font-black text-gray-900 mt-1">$0</div>
-                <p className="text-gray-500 text-sm mt-1">No credit card needed</p>
+                <p className="text-gray-500 text-sm mt-3">No credit card needed</p>
               </div>
               <ul className="space-y-3 mb-8">
                 {[
@@ -272,12 +272,12 @@ export default function DownloadPage() {
                     <span className="text-4xl font-black text-white">$9.99</span>
                     <span className="text-white/50 text-sm font-medium">/ month</span>
                   </div>
-                  <div className="inline-flex items-center gap-2.5 rounded-lg border border-[#D4A574]/30 px-3 py-1.5" style={{ background: 'rgba(212,165,116,0.12)' }}>
+                  <div className="inline-flex items-baseline gap-2.5 rounded-lg border border-[#D4A574]/30 px-3 py-1.5" style={{ background: 'rgba(212,165,116,0.12)' }}>
                     <span className="text-white text-sm font-bold">$79.99 / year</span>
                     <span className="text-[#D4A574] text-[10px] font-black uppercase tracking-widest -mr-[0.1em]">Save 33%</span>
                   </div>
                 </div>
-                <p className="text-white/50 text-sm mt-3">That&apos;s $6.67 per month, billed yearly. Cancel anytime.</p>
+                <p className="text-white/50 text-sm mt-3">$6.67/month billed yearly &middot; Cancel anytime</p>
               </div>
               <ul className="space-y-3 mb-8">
                 {[
