@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
+import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 const features = [
   {
@@ -155,17 +156,21 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
-            <Link
-              href="/download"
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-shimmer bg-white text-[#0A4D68] px-8 py-4 rounded-xl font-bold text-base hover:bg-gray-50 transition-all shadow-2xl hover:shadow-white/20 hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center gap-2"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25zM17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.37.07 2.32.85 3.12.87 1.2-.24 2.34-1.03 3.63-.89 1.58.19 2.77.89 3.54 2.26-3.25 1.95-2.73 5.96.41 7.36-.57 1.28-1.31 2.54-2.7 3.28z"/>
               </svg>
               App Store
-            </Link>
-            <Link
-              href="/download"
+            </a>
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-shimmer border border-white/25 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-white/10 transition-all hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
               style={{ background: 'rgba(255,255,255,0.08)' }}
             >
@@ -173,7 +178,7 @@ export default function HomePage() {
                 <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
               </svg>
               Google Play
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -364,17 +369,21 @@ export default function HomePage() {
             Download CarpMarks free on iOS and Android. Build your spot database, track your catches, and start seeing patterns that put more fish on the bank.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/download"
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-shimmer inline-flex items-center justify-center gap-3 bg-white text-[#0A4D68] px-10 py-4 rounded-xl font-bold text-base transition-all shadow-2xl hover:-translate-y-0.5"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25zM17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.37.07 2.32.85 3.12.87 1.2-.24 2.34-1.03 3.63-.89 1.58.19 2.77.89 3.54 2.26-3.25 1.95-2.73 5.96.41 7.36-.57 1.28-1.31 2.54-2.7 3.28z"/>
               </svg>
               App Store
-            </Link>
-            <Link
-              href="/download"
+            </a>
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-shimmer inline-flex items-center justify-center gap-3 text-white px-10 py-4 rounded-xl font-bold text-base transition-all shadow-2xl hover:-translate-y-0.5 hover:shadow-[#D4A574]/30"
               style={{ background: 'linear-gradient(135deg, #D4A574, #b8854f)' }}
             >
@@ -382,7 +391,7 @@ export default function HomePage() {
                 <path d="M3.18 23.76a2 2 0 0 0 2.05-.19l12.18-7.03-3.13-3.13L3.18 23.76zM.66 1.32A2 2 0 0 0 0 2.82v18.36c0 .61.24 1.16.66 1.5l.09.08 10.28-10.28v-.24L.75 1.24l-.09.08zM23.1 10.35 20.53 8.9l-3.22 3.22 3.22 3.22 2.58-1.46c.74-.42.74-1.1 0-1.53zM5.23.43 17.31 7.4l-3.13 3.13L5.23.43z"/>
               </svg>
               Google Play
-            </Link>
+            </a>
           </div>
         </div>
       </section>

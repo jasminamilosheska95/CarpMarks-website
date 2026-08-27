@@ -1,11 +1,8 @@
 import type { Metadata } from 'next';
 import StructuredData from '@/components/StructuredData';
+import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
 
 const BASE_URL = 'https://carpmarks.com';
-const PLAY_STORE_URL =
-  'https://play.google.com/store/apps/details?id=com.jasminamilosheska.carpmarks';
-const APP_STORE_URL =
-  'https://apps.apple.com/mk/app/carpmarks-carp-fishing-app/id6763633214';
 
 export const metadata: Metadata = {
   title: 'Download CarpMarks – Free Carp Fishing App for iOS & Android',
@@ -41,11 +38,26 @@ const softwareAppSchema = {
   applicationCategory: 'SportsApplication',
   description:
     'CarpMarks is the carp fishing app for serious anglers. Log catches, save GPS spots, track conditions and get AI fishing insights.',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'GBP',
-  },
+  offers: [
+    {
+      '@type': 'Offer',
+      name: 'Free',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Premium Monthly',
+      price: '9.99',
+      priceCurrency: 'USD',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Premium Yearly',
+      price: '79.99',
+      priceCurrency: 'USD',
+    },
+  ],
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5',
@@ -213,7 +225,7 @@ export default function DownloadPage() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
               <div className="mb-6">
                 <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Free</span>
-                <div className="text-4xl font-black text-gray-900 mt-1">£0</div>
+                <div className="text-4xl font-black text-gray-900 mt-1">$0</div>
                 <p className="text-gray-500 text-sm mt-1">No credit card needed</p>
               </div>
               <ul className="space-y-3 mb-8">
@@ -255,8 +267,15 @@ export default function DownloadPage() {
               </div>
               <div className="mb-6">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#D4A574]">Premium</span>
-                <div className="text-4xl font-black text-white mt-1">Upgrade</div>
-                <p className="text-white/50 text-sm mt-1">Monthly or yearly plans</p>
+                <div className="flex items-baseline gap-2 mt-1">
+                  <span className="text-4xl font-black text-white">$9.99</span>
+                  <span className="text-white/50 text-sm font-medium">/ month</span>
+                </div>
+                <div className="mt-3 inline-flex items-center gap-2.5 rounded-lg border border-[#D4A574]/30 px-3 py-1.5" style={{ background: 'rgba(212,165,116,0.12)' }}>
+                  <span className="text-white text-sm font-bold">$79.99 / year</span>
+                  <span className="text-[#D4A574] text-[10px] font-black uppercase tracking-widest">Save 33%</span>
+                </div>
+                <p className="text-white/50 text-sm mt-3">That&apos;s $6.67 per month, billed yearly. Cancel anytime.</p>
               </div>
               <ul className="space-y-3 mb-8">
                 {[

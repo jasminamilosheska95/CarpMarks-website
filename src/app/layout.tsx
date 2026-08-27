@@ -81,7 +81,7 @@ const softwareAppSchema = {
   offers: {
     '@type': 'Offer',
     price: '0',
-    priceCurrency: 'GBP',
+    priceCurrency: 'USD',
   },
   aggregateRating: {
     '@type': 'AggregateRating',
