@@ -235,7 +235,7 @@ export default function DownloadPage() {
                   'Real-time weather & conditions',
                   'Full map access',
                   'Catch photos & bait logging',
-                  'Rig tracking',
+                  'Rig logged per catch',
                   'Share catches & leaderboard',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-gray-700">
@@ -267,13 +267,15 @@ export default function DownloadPage() {
               </div>
               <div className="mb-6">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#D4A574]">Premium</span>
-                <div className="flex items-baseline gap-2 mt-1">
-                  <span className="text-4xl font-black text-white">$9.99</span>
-                  <span className="text-white/50 text-sm font-medium">/ month</span>
-                </div>
-                <div className="mt-3 inline-flex items-center gap-2.5 rounded-lg border border-[#D4A574]/30 px-3 py-1.5" style={{ background: 'rgba(212,165,116,0.12)' }}>
-                  <span className="text-white text-sm font-bold">$79.99 / year</span>
-                  <span className="text-[#D4A574] text-[10px] font-black uppercase tracking-widest">Save 33%</span>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mt-1">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-black text-white">$9.99</span>
+                    <span className="text-white/50 text-sm font-medium">/ month</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2.5 rounded-lg border border-[#D4A574]/30 px-3 py-1.5" style={{ background: 'rgba(212,165,116,0.12)' }}>
+                    <span className="text-white text-sm font-bold">$79.99 / year</span>
+                    <span className="text-[#D4A574] text-[10px] font-black uppercase tracking-widest -mr-[0.1em]">Save 33%</span>
+                  </div>
                 </div>
                 <p className="text-white/50 text-sm mt-3">That&apos;s $6.67 per month, billed yearly. Cancel anytime.</p>
               </div>
@@ -284,7 +286,7 @@ export default function DownloadPage() {
                   'Real-time weather & conditions',
                   'Full map access',
                   'Catch photos & bait logging',
-                  'Rig tracking',
+                  'Rig logged per catch',
                   'Share catches & leaderboard',
                   'Smart condition alerts',
                   'Morning fishing digest',
