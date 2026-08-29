@@ -111,8 +111,23 @@ function isBrandMatch(brandName) {
 // Returns the first 3 words of a product name — used to deduplicate product variants
 // (e.g. "Fox EOS 8000" and "Fox EOS 10000" → same family "fox eos free")
 function productFamily(name) {
-  return name.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').trim().split(/\s+/).slice(0, 3).join(' ');
+  // Bait ranges repeat one flavour across several forms and sizes: "Pop Up
+  // Dumbell Banoffee 8mm" and "Slow Sinking Dumbell SS Dumbell Banoffee 16mm"
+  // are one product line to a reader. Strip the form words and the sizes, drop
+  // repeats, and both fold to "korda banoffee".
+  const noise = new Set([
+    'pop', 'up', 'slow', 'sinking', 'mini', 'micro', 'the', 'pu', 'ss',
+    'dumbell', 'dumbbell', 'hi', 'visual', 'shelf', 'life',
+  ]);
+  const words = name
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(w => w && !noise.has(w) && !/^\d/.test(w));
+  return [...new Set(words)].slice(0, 3).join(' ');
 }
+
 
 
 // ─── Awin's own categories → the sections this site already has ─────────────
@@ -228,9 +243,22 @@ const AWIN_CATEGORY_MAP = {
   'paste': 'Bait',
 };
 
+// The merchant's category decides the section, with two exceptions where they
+// file a product plainly wrong: PVA sold as luggage, and bivvy lights sold as
+// bite alarms. Narrow on purpose — this is not a return to guessing from names.
+const CATEGORY_OVERRIDES = [
+  { test: /\bpva\b/i, category: 'PVA' },
+  { test: /\b(light|torch|lantern)\b/i, notWhen: /\b(alarm|micron|receiver|isotope|starlight)\b/i, category: 'Lighting' },
+];
+
 /** Awin's category for this row, translated to a site section — null if it is not carp gear */
-function siteCategory(merchantCategory) {
-  return AWIN_CATEGORY_MAP[(merchantCategory ?? '').trim().toLowerCase()] ?? null;
+function siteCategory(merchantCategory, productName = '') {
+  const mapped = AWIN_CATEGORY_MAP[(merchantCategory ?? '').trim().toLowerCase()] ?? null;
+  if (!mapped) return null;
+  for (const o of CATEGORY_OVERRIDES) {
+    if (o.test.test(productName) && !(o.notWhen && o.notWhen.test(productName))) return o.category;
+  }
+  return mapped;
 }
 
 // Carp specialists come first. Daiwa and Shimano make good carp gear but sell
@@ -464,7 +492,7 @@ async function main() {
     for (const row of rows) {
       // Awin's own category decides the section — and decides whether the
       // product belongs here at all
-      const cat = siteCategory(f(row, 'merchant_category'));
+      const cat = siteCategory(f(row, 'merchant_category'), f(row, 'product_name'));
       if (!cat) continue;
       (byCategory[cat] ??= []).push(row);
     }
@@ -530,7 +558,7 @@ async function main() {
       const longDesc = stripHtml(f(row, 'description'));
       const specs = stripHtml(f(row, 'specifications'));
 
-      const category = siteCategory(f(row, 'merchant_category')) ?? 'Accessories';
+      const category = siteCategory(f(row, 'merchant_category'), productName) ?? 'Accessories';
 
       return {
         slug: `${slugify(productName)}-${productId}`,
