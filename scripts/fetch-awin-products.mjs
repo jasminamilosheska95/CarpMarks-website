@@ -114,15 +114,155 @@ function productFamily(name) {
   return name.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').trim().split(/\s+/).slice(0, 3).join(' ');
 }
 
+
+// ─── Awin's own categories → the sections this site already has ─────────────
+// The merchant files every product under a specific category ("Carp Rods",
+// "Bite Alarms", "Boilies"), so there is nothing to guess. This is an
+// allowlist: a product whose category is not here does not belong on a carp
+// site, which is what keeps out the clothing, lures, match, pole and sea gear.
+const AWIN_CATEGORY_MAP = {
+  // Rods & reels
+  'carp rods': 'Rods',
+  'baitrunner reels': 'Reels',
+  'big pit reels': 'Reels',
+  // Alarms & indication
+  'bite alarms': 'Alarms',
+  'bobbins': 'Alarms',
+  'swingers': 'Alarms',
+  'strike indicators': 'Alarms',
+  'isotopes and starlights': 'Alarms',
+  // Bank sticks, pods, rests
+  'banksticks': 'Bank Sticks',
+  'buzz bars': 'Bank Sticks',
+  'rod pods': 'Bank Sticks',
+  'rod rest heads': 'Bank Sticks',
+  'butt rests': 'Bank Sticks',
+  'ripple bars': 'Bank Sticks',
+  'bump bars': 'Bank Sticks',
+  'tripods': 'Bank Sticks',
+  // Landing & care
+  'carp nets': 'Landing',
+  'landing net heads': 'Landing',
+  'landing net handles': 'Landing',
+  'carp unhooking mats': 'Landing',
+  'unhooking mats': 'Landing',
+  // Weighing
+  'scales & weighing': 'Scales',
+  'measuring sticks': 'Scales',
+  // Line
+  'braid fishing lines': 'Line',
+  'braid': 'Line',
+  'monofilament': 'Line',
+  'fluorocarbon': 'Line',
+  'tapered leaders': 'Line',
+  // Rigs
+  'carp rigs': 'Rigs',
+  'ready rigs': 'Rigs',
+  'hooklinks': 'Rigs',
+  'rig sleeves': 'Rigs',
+  'shrink tubing': 'Rigs',
+  'silicone tubing': 'Rigs',
+  'stingers': 'Rigs',
+  // Terminal tackle
+  'carp hooks': 'Terminal',
+  'hooks': 'Terminal',
+  'snaps, swivels & clips': 'Terminal',
+  'bombs': 'Terminal',
+  'lead clips': 'Terminal',
+  'beads': 'Terminal',
+  'crimps': 'Terminal',
+  'tail rubbers': 'Terminal',
+  'bait stops': 'Terminal',
+  'nose cones': 'Terminal',
+  // Feeders
+  'method feeders': 'Feeders',
+  'cage feeders': 'Feeders',
+  'window feeders': 'Feeders',
+  'method moulds': 'Feeders',
+  // Tools
+  'rig tools': 'Tools',
+  'pliers': 'Tools',
+  'crimping pliers': 'Tools',
+  'scissors': 'Tools',
+  'forceps': 'Tools',
+  'bait needle': 'Tools',
+  'bait drill': 'Tools',
+  'side cutters': 'Tools',
+  'disgorgers': 'Tools',
+  // Baiting and feature-finding gear — carp essentials, not bait itself
+  'catapults': 'Tools',
+  'spods': 'Tools',
+  'marker floats': 'Terminal',
+  // PVA
+  'pva': 'PVA',
+  // Shelter & comfort
+  'bivvies': 'Bivvies',
+  'fishing umbrellas': 'Bivvies',
+  'sleeping bags': 'Sleeping',
+  'bed chairs': 'Bedding',
+  'chairs': 'Seating',
+  'chair accessories': 'Seating',
+  'lighting': 'Lighting',
+  'sunglasses': 'Eyewear',
+  // Luggage
+  'rod holdalls': 'Storage',
+  'carryalls': 'Storage',
+  'tackle boxes': 'Storage',
+  'accessory bags': 'Storage',
+  'hook & rig storage': 'Storage',
+  'reel pouches': 'Storage',
+  'cool bags': 'Storage',
+  'rucksacks': 'Storage',
+  'bait bags': 'Storage',
+  'bait tubs & trays': 'Storage',
+  'buckets & riddles': 'Storage',
+  'barrows': 'Storage',
+  // Bait
+  'boilies': 'Bait',
+  'pellets': 'Bait',
+  "pop up's": 'Bait',
+  'particles': 'Bait',
+  'ground bait': 'Bait',
+  'additives': 'Bait',
+  'artificial baits': 'Bait',
+  'paste': 'Bait',
+};
+
+/** Awin's category for this row, translated to a site section — null if it is not carp gear */
+function siteCategory(merchantCategory) {
+  return AWIN_CATEGORY_MAP[(merchantCategory ?? '').trim().toLowerCase()] ?? null;
+}
+
+// Carp specialists come first. Daiwa and Shimano make good carp gear but sell
+// every discipline, so they should not crowd out the brands this site is about.
+const BRAND_PRIORITY = {
+  korda: 30, fox: 30, 'fox international': 30, nash: 30, 'nash tackle': 30,
+  trakker: 30, ridgemonkey: 25, 'ridge monkey': 25, mainline: 25,
+  'mainline baits': 25, esp: 25, 'esp carp tackle': 25, gardner: 20,
+  'gardner tackle': 20, 'sticky baits': 20, solar: 20, 'solar tackle': 20,
+  'thinking anglers': 20, shimano: 5, daiwa: 5,
+};
+
 function mapCategory(catStr) {
   const c = (catStr ?? '').toLowerCase();
+  // Before anything else: a PVA bag is PVA, whatever the merchant filed it under
+  if (c.includes('pva')) return 'PVA';
   if (c.includes('holdall') || c.includes('rod bag')) return 'Storage';
+  // Rests and buzz bars are bank-stick gear, not rods
+  if (c.includes('rest') || c.includes('buzz bar') || c.includes('buzzer bar')) return 'Bank Sticks';
   if (c.includes('rod')) return 'Rods';
   if (c.includes('reel')) return 'Reels';
+  // Merchants file bivvy lights and remotes under "Bite Alarms & Accessories".
+  // They pair with alarms; they do not detect bites.
+  if (/\b(light|torch|lantern|remote|sensor)\b/.test(c) && !/\b(alarm|micron|receiver)\b/.test(c)) return 'Accessories';
   if (c.includes('alarm') || c.includes('indicator') || c.includes('bite detect') || c.includes('bobbin')) return 'Alarms';
   if (c.includes('bivvy') || c.includes('shelter') || c.includes('brolly') || c.includes('umbrella')) return 'Bivvies';
   if (c.includes('landing') || c.includes('net head') || c.includes('unhooking') || c.includes('carp net')) return 'Landing';
   if (c.includes('weigh') || c.includes('scale')) return 'Scales';
+  if (c.includes('tool') || c.includes('knot') || c.includes('scissor') || c.includes('clipper') ||
+      c.includes('sharpener') || c.includes('baiting needle') || c.includes('stripper')) return 'Tools';
+  if (c.includes('feeder') || c.includes('method') || c.includes('cage')) return 'Feeders';
+  if (c.includes('swivel') || c.includes('lead clip') || c.includes('tail rubber')) return 'Terminal';
   if (c.includes('rig') || c.includes('hooklink') || c.includes('ready rig') || c.includes('rig sleeve')) return 'Rigs';
   if (c.includes('lead') || c.includes('sinker') || c.includes('terminal') || c.includes('swivel') ||
       c.includes('hook') || c.includes('clip') || c.includes('tail rubber') || c.includes('bead') ||
@@ -157,6 +297,14 @@ const NON_CARP_EXCLUDE = [
   'fly fishing', 'fly rod', 'fly reel', 'fly line', 'nymph', 'dry fly',
   // Specific non-carp brand ranges
   "n'zon",
+  // Spinning / lure gear — the biggest leak, since Shimano, Daiwa and Fox sell
+  // every discipline under one brand name
+  'spinning', 'spin reel', 'shad', 'drop shot', 'dropshot',
+  // Non-carp ranges from those same brands
+  'saltist', 'kenzaki', 'gekkabijin', 'hrf', 'aero', 'prorex', 'infinity q',
+  'multiplier', 'baitcast', 'baitcaster', 'centrepin', 'centre pin',
+  // Match and commercial coarse gear — seat boxes, pole gear, commercial nets
+  'seat box', 'commercial', 'pole', 'whip', 'boat seat',
   // Other
   'catfish rod',
 ];
@@ -164,7 +312,9 @@ const NON_CARP_EXCLUDE = [
 // Pre-compile to regex with word boundaries so 'eel' won't match inside 'reel',
 // 'pike' won't match inside 'spike', etc.
 const NON_CARP_PATTERNS = NON_CARP_EXCLUDE.map(kw =>
-  new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+')}\\b`, 'i')
+// Trailing `s?` matters: without it "boat rod" never matched "Boat Rods",
+// which is how sea rods kept reaching the carp list.
+  new RegExp(`\\b${kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+')}s?\\b`, 'i')
 );
 
 function isNonCarpProduct(productName, merchantCategory, categoryName) {
@@ -198,6 +348,9 @@ function score(row, hIdx) {
   if (reviews >= 50) s += 8;
   else if (reviews >= 10) s += 4;
   else if (reviews >= 1) s += 1;
+
+  // ── Brand precedence: this is a carp site ──
+  s += BRAND_PRIORITY[brand] ?? 0;
 
   // ── Category priority ──
   const priorityCats = ['rod', 'reel', 'alarm', 'bivvy', 'terminal', 'rig', 'lead', 'landing'];
@@ -292,30 +445,65 @@ async function main() {
   const foundBrands = Object.keys(byBrand);
   console.log(`Found ${foundBrands.length} matching brand(s): ${foundBrands.join(', ')}`);
 
-  // Sort by score, then pick diverse products:
-  // - deduplicate by product family (no near-identical variants)
-  // - max 2 products per category per brand (so we don't get 5 reels from one brand)
-  // - respect per-brand total cap
-  const MAX_PER_CAT_PER_BRAND = 3;
+  // Selection is per CATEGORY, not per brand. Picking the best few products per
+  // brand left coverage to chance — a run could return no bivvy, bed, chair or
+  // set of scales at all. The site has fixed sections, so each one gets filled.
+  const SITE_CATEGORIES = [
+    'Rods', 'Reels', 'Alarms', 'Bank Sticks', 'Landing', 'Scales', 'Line',
+    'Rigs', 'Terminal', 'Feeders', 'Tools', 'PVA', 'Bivvies', 'Sleeping',
+    'Bedding', 'Seating', 'Lighting', 'Eyewear', 'Storage', 'Bait',
+  ];
+  const PER_CATEGORY = 3;
+  const MAX_PER_BRAND_PER_CATEGORY = 2;
   const selected = [];
-  for (const [bKey, rows] of Object.entries(byBrand)) {
-    rows.sort((a, b) => score(b, hIdx) - score(a, hIdx));
-    const limit = brandLimit(bKey);
-    const seenFamilies = new Set();
-    const catCounts = {};
-    const unique = [];
+
+  // Every candidate, pooled across brands and bucketed by the section it will
+  // appear in on the site
+  const byCategory = {};
+  for (const rows of Object.values(byBrand)) {
     for (const row of rows) {
+      // Awin's own category decides the section — and decides whether the
+      // product belongs here at all
+      const cat = siteCategory(f(row, 'merchant_category'));
+      if (!cat) continue;
+      (byCategory[cat] ??= []).push(row);
+    }
+  }
+
+  if (process.env.AWIN_DEBUG) {
+    console.log('candidates per section:', Object.fromEntries(
+      Object.entries(byCategory).map(([k, v]) => [k, v.length]).sort()
+    ));
+  }
+
+  for (const cat of SITE_CATEGORIES) {
+    const rows = byCategory[cat] ?? [];
+    // Tie-break on product id: the feed currently carries no ratings, so most
+    // rows score the same and ties would otherwise fall back to feed order —
+    // a different set of products on every fetch.
+    rows.sort((a, b) => {
+      const diff = score(b, hIdx) - score(a, hIdx);
+      if (diff !== 0) return diff;
+      return f(a, 'aw_product_id').localeCompare(f(b, 'aw_product_id'));
+    });
+
+    const seenFamilies = new Set();
+    const brandCounts = {};
+    let taken = 0;
+    for (const row of rows) {
+      if (taken >= PER_CATEGORY) break;
       const family = productFamily(f(row, 'product_name'));
       if (seenFamilies.has(family)) continue;
-      const cat = mapCategory(f(row, 'merchant_category') || f(row, 'category_name') || f(row, 'product_name'));
-      catCounts[cat] = (catCounts[cat] ?? 0);
-      if (catCounts[cat] >= MAX_PER_CAT_PER_BRAND) continue;
+      // Spread the section across brands rather than filling it from one
+      const bKey = f(row, 'brand_name').toLowerCase();
+      brandCounts[bKey] = brandCounts[bKey] ?? 0;
+      if (brandCounts[bKey] >= MAX_PER_BRAND_PER_CATEGORY) continue;
       seenFamilies.add(family);
-      catCounts[cat]++;
-      unique.push(row);
-      if (unique.length >= limit) break;
+      brandCounts[bKey]++;
+      selected.push(row);
+      taken++;
     }
-    selected.push(...unique);
+    if (taken === 0) console.log(`  (no products found for ${cat})`);
   }
 
   // Map to Product shape
@@ -342,8 +530,7 @@ async function main() {
       const longDesc = stripHtml(f(row, 'description'));
       const specs = stripHtml(f(row, 'specifications'));
 
-      const catRaw = f(row, 'merchant_category') || f(row, 'category_name') || productName;
-      const category = mapCategory(catRaw);
+      const category = siteCategory(f(row, 'merchant_category')) ?? 'Accessories';
 
       return {
         slug: `${slugify(productName)}-${productId}`,
