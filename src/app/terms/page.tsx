@@ -14,7 +14,7 @@ export default function TermsPage() {
             ← Back to CarpMarks
           </Link>
           <h1 className="text-4xl font-bold mt-4 mb-2">Terms of Service</h1>
-          <p className="text-white/60 text-sm">Last Updated: July 2026</p>
+          <p className="text-white/60 text-sm">Last Updated: August 2026</p>
         </div>
       </div>
 
@@ -58,7 +58,7 @@ export default function TermsPage() {
           <li>Attach photos to spots and catches</li>
           <li>Plan fishing sessions with the Session Planner (AI)</li>
           <li>Identify fish species from catch photos with the scanner (AI)</li>
-          <li>Share catches with the community and view leaderboards</li>
+          <li>Share catches and spots with the community and view leaderboards</li>
           <li>View statistics and history of your fishing activities</li>
         </ul>
 
@@ -216,6 +216,27 @@ export default function TermsPage() {
           Photos that do not meet these guidelines may be removed under Section 4.3.
         </p>
 
+        <h3 className="text-gray-900 font-bold text-lg mt-6 mb-3">4.6 Shared Spots</h3>
+        <p className="mb-4">
+          Sharing a spot publishes its exact location to all other users. You agree that:
+        </p>
+        <ul className="list-disc pl-6 mb-6 space-y-2">
+          <li>
+            You will only share a spot you are{' '}
+            <strong className="text-gray-900">lawfully entitled to fish</strong>, and that you are
+            not prohibited from publishing by a fishery, club, or landowner
+          </li>
+          <li>
+            A shared spot is <strong className="text-gray-900">not permission</strong> for anyone to
+            fish there or to enter the land around it
+          </li>
+          <li>
+            You are responsible for the content you publish with a spot, including its name, notes,
+            and photo
+          </li>
+          <li>We may remove any shared spot under Section 4.3</li>
+        </ul>
+
         <h2 className="text-[#0A4D68] text-xl font-bold mt-10 mb-4">5. Acceptable Use</h2>
         <p className="mb-4">When using CarpMarks, you agree to:</p>
         <ul className="list-disc pl-6 mb-6 space-y-2">
@@ -260,6 +281,12 @@ export default function TermsPage() {
           <li>
             Any injury, loss, or damage arising from visiting locations saved in the app is your
             sole responsibility
+          </li>
+          <li>
+            Spots shared by other anglers are{' '}
+            <strong className="text-gray-900">user-submitted and unverified</strong>. They may be
+            inaccurate, on private land, or require a permit — confirm your access rights before
+            fishing anywhere you find on the map
           </li>
         </ul>
 

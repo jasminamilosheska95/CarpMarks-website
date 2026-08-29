@@ -14,7 +14,7 @@ export default function PrivacyPage() {
             ← Back to CarpMarks
           </Link>
           <h1 className="text-4xl font-bold mt-4 mb-2">Privacy Policy</h1>
-          <p className="text-white/60 text-sm">Last Updated: July 2026</p>
+          <p className="text-white/60 text-sm">Last Updated: August 2026</p>
         </div>
       </div>
 
@@ -198,6 +198,11 @@ export default function PrivacyPage() {
           You can disable location permissions at any time through your device settings.
         </p>
         <p className="mb-6">
+          Coordinates of spots you choose to share with the community are published{' '}
+          <strong className="text-gray-900">exactly as recorded</strong> — they are not blurred,
+          offset, or approximated. Spots you have not shared are never visible to anyone else.
+        </p>
+        <p className="mb-6">
           The map feature is provided for{' '}
           <strong className="text-gray-900">personal reference only</strong> and is not intended as
           a navigation tool. Always use proper navigation methods when traveling to fishing
@@ -274,6 +279,14 @@ export default function PrivacyPage() {
             species, weight, and catch details — is visible to other users in the community feed.
             Sharing is off by default for each catch, and you can unshare any catch at any time
             from the catch itself or from your profile
+          </li>
+          <li>
+            <strong className="text-gray-900">Shared spots (opt-in, per spot):</strong> If you
+            choose to share a spot, its <strong className="text-gray-900">exact location</strong> —
+            along with its name, photo, notes, depth, and water size — becomes visible to all other
+            users on the map, together with any catches you have separately shared at that spot.
+            Sharing is off by default for every spot, and you can stop sharing a spot at any time
+            by editing it
           </li>
           <li>
             <strong className="text-gray-900">With your consent:</strong> When you explicitly
