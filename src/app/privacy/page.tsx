@@ -15,7 +15,7 @@ export default function PrivacyPage() {
             ← Back to CarpMarks
           </Link>
           <h1 className="text-4xl font-bold mt-4 mb-2">Privacy Policy</h1>
-          <p className="text-white/60 text-sm">Last Updated: August 2026</p>
+          <p className="text-white/60 text-sm">Last Updated: November 2026</p>
         </div>
       </div>
 
@@ -165,6 +165,9 @@ export default function PrivacyPage() {
           <li>
             <strong className="text-gray-900">OpenAI:</strong> Powers the AI fishing assistant and
             Session Planner briefs
+          </li>
+          <li>
+            <strong className="text-gray-900">Sentry:</strong> Crash reporting and error diagnostics
           </li>
         </ul>
         <p className="mb-4">
