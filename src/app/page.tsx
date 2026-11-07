@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
 import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: 'https://carpmarks.com/' },
+};
 
 const features = [
   {

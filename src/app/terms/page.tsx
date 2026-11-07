@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Terms of Service – CarpMarks',
+  alternates: { canonical: 'https://carpmarks.com/terms/' },
 };
 
 export default function TermsPage() {
