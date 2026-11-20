@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import StructuredData from '@/components/StructuredData';
-import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
+import { appStoreCampaignUrl, PLAY_STORE_URL } from '@/lib/store-links';
 
 const BASE_URL = 'https://carpmarks.com';
 
@@ -159,7 +159,7 @@ export default function DownloadPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
             <a
-              href={APP_STORE_URL}
+              href={appStoreCampaignUrl('download-hero')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shimmer inline-flex items-center justify-center gap-3 bg-white text-[#0A4D68] px-10 py-4 rounded-xl font-bold text-base hover:bg-gray-100 transition-all shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
@@ -343,7 +343,7 @@ export default function DownloadPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={APP_STORE_URL}
+              href={appStoreCampaignUrl('download-footer')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shimmer inline-flex items-center justify-center gap-3 bg-white text-[#0A4D68] px-10 py-4 rounded-xl font-bold text-base transition-all shadow-2xl hover:-translate-y-0.5"

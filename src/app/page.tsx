@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
-import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/store-links';
+import { appStoreCampaignUrl, PLAY_STORE_URL } from '@/lib/store-links';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -162,7 +162,7 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
             <a
-              href={APP_STORE_URL}
+              href={appStoreCampaignUrl('home-hero')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shimmer bg-white text-[#0A4D68] px-8 py-4 rounded-xl font-bold text-base hover:bg-gray-50 transition-all shadow-2xl hover:shadow-white/20 hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center gap-2"
@@ -375,7 +375,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={APP_STORE_URL}
+              href={appStoreCampaignUrl('home-footer')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shimmer inline-flex items-center justify-center gap-3 bg-white text-[#0A4D68] px-10 py-4 rounded-xl font-bold text-base transition-all shadow-2xl hover:-translate-y-0.5"
