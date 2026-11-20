@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
-import { appStoreCampaignUrl, PLAY_STORE_URL } from '@/lib/store-links';
+import { appStoreCampaignUrl, playStoreCampaignUrl } from '@/lib/store-links';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -173,7 +173,7 @@ export default function HomePage() {
               App Store
             </a>
             <a
-              href={PLAY_STORE_URL}
+              href={playStoreCampaignUrl('home-hero')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shimmer border border-white/25 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-white/10 transition-all hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
@@ -386,7 +386,7 @@ export default function HomePage() {
               App Store
             </a>
             <a
-              href={PLAY_STORE_URL}
+              href={playStoreCampaignUrl('home-footer')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shimmer inline-flex items-center justify-center gap-3 text-white px-10 py-4 rounded-xl font-bold text-base transition-all shadow-2xl hover:-translate-y-0.5 hover:shadow-[#D4A574]/30"

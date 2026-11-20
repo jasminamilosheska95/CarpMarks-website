@@ -14,3 +14,12 @@ export type StorePlacement =
 export function appStoreCampaignUrl(placement: StorePlacement): string {
   return `https://apps.apple.com/app/apple-store/id6763633214?pt=${APP_STORE_PROVIDER_TOKEN}&ct=${placement}&mt=8`;
 }
+
+// Google Play install referrer: installs per placement show in Play Console
+// under Grow → Store performance → Store listing acquisition (UTM campaigns).
+export function playStoreCampaignUrl(placement: StorePlacement): string {
+  const referrer = encodeURIComponent(
+    `utm_source=carpmarks-website&utm_medium=website&utm_campaign=${placement}`
+  );
+  return `${PLAY_STORE_URL}&referrer=${referrer}`;
+}

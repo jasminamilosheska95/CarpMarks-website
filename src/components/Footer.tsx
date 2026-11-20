@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import MoreApps from '@/components/MoreApps';
 
 export default function Footer() {
   return (
     <footer className="bg-[#05293D] text-white pt-14 pb-8 px-4">
       <div className="max-w-6xl mx-auto">
+        <MoreApps />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 
           {/* Brand */}
